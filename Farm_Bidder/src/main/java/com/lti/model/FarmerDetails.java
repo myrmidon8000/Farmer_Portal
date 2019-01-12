@@ -1,7 +1,10 @@
 package com.lti.model;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -10,7 +13,11 @@ import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
-public class FarmerDetails {
+import org.springframework.stereotype.Component;
+
+@Component
+@Entity
+public class FarmerDetails implements Serializable {
 
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="farmerdetails_sequence")
 	@SequenceGenerator(name="farmerdetails_sequence",sequenceName="farmerdetails_sequence")

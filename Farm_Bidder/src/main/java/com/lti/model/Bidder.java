@@ -71,7 +71,7 @@ public class Bidder implements Serializable{
 				+ ", user=" + user + "]";
 	}
 
-	public Bidder(String bidderName) {
+	public Bidder(String bidderName, BidderDetails bidderDetails, User user) {
 		super();
 		this.bidderName = bidderName;
 		this.bidderDetails=bidderDetails;

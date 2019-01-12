@@ -23,11 +23,22 @@ public class LandDetails implements Serializable{
 	@Column 
 	private String landAddress;
 	@Column
-	private String landCity;
+	private int area;
+	@Column
+private int landPincode;
 	
-	@OneToOne(cascade=CascadeType.ALL)
-	private State state;
-	
+	public int getArea() {
+		return area;
+	}
+	public void setArea(int area) {
+		this.area = area;
+	}
+	public int getPincode() {
+		return landPincode;
+	}
+	public void setPincode(int landPincode) {
+		this.landPincode = landPincode;
+	}
 	public int getLandId() {
 		return landId;
 	}
@@ -40,25 +51,13 @@ public class LandDetails implements Serializable{
 	public void setLandAddress(String landAddress) {
 		this.landAddress = landAddress;
 	}
-	public String getLandCity() {
-		return landCity;
-	}
-	public void setLandCity(String landCity) {
-		this.landCity = landCity;
-	}
-	public State getState() {
-		return state;
-	}
-	@Override
-	public String toString() {
-		return "LandDetails [landId=" + landId + ", landAddress=" + landAddress + ", landCity=" + landCity + ", state="
-				+ state + "]";
-	}
-	public LandDetails(String landAddress, String landCity,State state) {
+	
+	
+	public LandDetails(String landAddress, int area,int landPincode) {
 		super();
 		this.landAddress = landAddress;
-		this.landCity = landCity;
-		this.state=state;
+		this.area = area;
+		this.landPincode=landPincode;
 	}
 	public LandDetails() {
 		super();

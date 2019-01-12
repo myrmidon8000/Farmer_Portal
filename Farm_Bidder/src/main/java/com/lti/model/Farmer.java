@@ -62,10 +62,11 @@ public String toString() {
 	return "Farmer [farmerId=" + farmerId + ", farmerName=" + farmerName + ", user=" + user + ", farmerDetails="
 			+ farmerDetails + "]";
 }
-public Farmer(String farmerName,FarmerDetails farmerDetails) {
+public Farmer(String farmerName,User user,FarmerDetails farmerDetails) {
 	super();
 
 	this.farmerName = farmerName;
+	this.user=user;
 	this.farmerDetails=farmerDetails;
 }
 

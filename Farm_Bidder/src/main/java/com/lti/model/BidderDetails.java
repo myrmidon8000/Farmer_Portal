@@ -1,7 +1,10 @@
 package com.lti.model;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -10,7 +13,12 @@ import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
-public class BidderDetails {
+import org.springframework.stereotype.Component;
+
+@Component
+@Entity
+
+public class BidderDetails implements Serializable {
 
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="bidderdetails_sequence")
 	@SequenceGenerator(name="bidderdetails_sequence",sequenceName="bidderdetails_sequence")
