@@ -1,0 +1,9 @@
+package com.lti.model;
+
+import java.io.Serializable;
+
+public class LandDetails implements Serializable{
+@Id
+@GeneratedValue(startegy=)
+	private int 
+}
