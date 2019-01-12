@@ -11,11 +11,12 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 public class BidderDetails {
-	@Id
+
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="bidderdetails_sequence")
 	@SequenceGenerator(name="bidderdetails_sequence",sequenceName="bidderdetails_sequence")
 	@Column
 private int bidderDetailsId;
+	@Id
 @Column
 @NotEmpty(message = "Phone Number cannot be empty!")
 @Size(max=10, min=10, message="Phone Number Should be 10 number long" )
@@ -41,30 +42,23 @@ public void setPhoneNumber(int phoneNumber) {
 public BankDetails getBankDetails() {
 	return bankDetails;
 }
-public void setBankDetails(BankDetails bankDetails) {
-	this.bankDetails = bankDetails;
-}
+
 public Address getAddress() {
 	return address;
 }
-public void setAddress(Address address) {
-	this.address = address;
-}
+
 public DocumentDetails getDocumentDetails() {
 	return documentDetails;
 }
-public void setDocumentDetails(DocumentDetails documentDetails) {
-	this.documentDetails = documentDetails;
-}
+
 @Override
 public String toString() {
 	return "BidderDetails [bidderDetailsId=" + bidderDetailsId + ", phoneNumber=" + phoneNumber + ", bankDetails="
 			+ bankDetails + ", address=" + address + ", documentDetails=" + documentDetails + "]";
 }
-public BidderDetails(int bidderDetailsId, int phoneNumber, BankDetails bankDetails, Address address,
+public BidderDetails(int phoneNumber, BankDetails bankDetails, Address address,
 		DocumentDetails documentDetails) {
 	super();
-	this.bidderDetailsId = bidderDetailsId;
 	this.phoneNumber = phoneNumber;
 	this.bankDetails = bankDetails;
 	this.address = address;

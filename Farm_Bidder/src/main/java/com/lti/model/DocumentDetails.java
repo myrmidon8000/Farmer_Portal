@@ -66,10 +66,9 @@ public class DocumentDetails implements Serializable{
 				+ panNumber + ", certificateNumber=" + certificateNumber + ", traderLicenseNumber="
 				+ traderLicenseNumber + "]";
 	}
-	public DocumentDetails(int documentId, String aadharNumber, String panNumber, String certificateNumber,
+	public DocumentDetails(String aadharNumber, String panNumber, String certificateNumber,
 			String traderLicenseNumber) {
 		super();
-		this.documentId = documentId;
 		this.aadharNumber = aadharNumber;
 		this.panNumber = panNumber;
 		this.certificateNumber = certificateNumber;

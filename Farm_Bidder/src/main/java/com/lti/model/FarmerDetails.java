@@ -11,11 +11,12 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 public class FarmerDetails {
-	@Id
+
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="farmerdetails_sequence")
 	@SequenceGenerator(name="farmerdetails_sequence",sequenceName="farmerdetails_sequence")
 	@Column
 private int farmerDetailsId;
+@Id
 @Column
 @NotEmpty(message = "Phone Number cannot be empty!")
 @Size(max=10, min=10, message="Phone Number Should be 10 number long" )
@@ -43,37 +44,31 @@ public void setPhoneNumber(int phoneNumber) {
 public BankDetails getBankDetails() {
 	return bankDetails;
 }
-public void setBankDetails(BankDetails bankDetails) {
-	this.bankDetails = bankDetails;
-}
 public Address getAddress() {
 	return address;
-}
-public void setAddress(Address address) {
-	this.address = address;
 }
 public LandDetails getLandDetails() {
 	return landDetails;
 }
-public void setLandDetails(LandDetails landDetails) {
-	this.landDetails = landDetails;
-}
+
 public DocumentDetails getDocumentDetails() {
 	return documentDetails;
 }
-public void setDocumentDetails(DocumentDetails documentDetails) {
-	this.documentDetails = documentDetails;
-}
+
 @Override
 public String toString() {
 	return "FarmerDetails [farmerDetailsId=" + farmerDetailsId + ", phoneNumber=" + phoneNumber + ", bankDetails="
 			+ bankDetails + ", address=" + address + ", landDetails=" + landDetails + ", documentDetails="
 			+ documentDetails + "]";
 }
-public FarmerDetails(int farmerDetailsId, int phoneNumber) {
+public FarmerDetails(int phoneNumber,BankDetails bankDetails, Address address, LandDetails landDetails,DocumentDetails documentDetails ) {
 	super();
-	this.farmerDetailsId = farmerDetailsId;
+	
 	this.phoneNumber = phoneNumber;
+	this.bankDetails=bankDetails;
+	this.address=address;
+	this.landDetails=landDetails;
+	this.documentDetails=documentDetails ;
 }
 public FarmerDetails() {
 	super();

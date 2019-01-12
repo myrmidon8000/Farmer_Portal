@@ -50,9 +50,9 @@ public class BankDetails implements Serializable{
 	public String toString() {
 		return "BankDetails [bankId=" + bankId + ", ifscCode=" + ifscCode + ", accountNumber=" + accountNumber + "]";
 	}
-	public BankDetails(int bankId, String ifscCode, int accountNumber) {
+	public BankDetails(String ifscCode, int accountNumber) {
 		super();
-		this.bankId = bankId;
+	
 		this.ifscCode = ifscCode;
 		this.accountNumber = accountNumber;
 	}

@@ -41,9 +41,6 @@ public void setUser(User user) {
 public FarmerDetails getFarmerDetails() {
 	return farmerDetails;
 }
-public void setFarmerDetails(FarmerDetails farmerDetails) {
-	this.farmerDetails = farmerDetails;
-}
 public int getFarmerId() {
 	return farmerId;
 }
@@ -65,11 +62,11 @@ public String toString() {
 	return "Farmer [farmerId=" + farmerId + ", farmerName=" + farmerName + ", user=" + user + ", farmerDetails="
 			+ farmerDetails + "]";
 }
-public Farmer(int farmerId, String farmerName) {
+public Farmer(String farmerName,FarmerDetails farmerDetails) {
 	super();
-	this.farmerId = farmerId;
-	this.farmerName = farmerName;
 
+	this.farmerName = farmerName;
+	this.farmerDetails=farmerDetails;
 }
 
 

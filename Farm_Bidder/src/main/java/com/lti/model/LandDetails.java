@@ -27,6 +27,7 @@ public class LandDetails implements Serializable{
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	private State state;
+	
 	public int getLandId() {
 		return landId;
 	}
@@ -48,20 +49,16 @@ public class LandDetails implements Serializable{
 	public State getState() {
 		return state;
 	}
-	public void setState(State state) {
-		this.state = state;
-	}
 	@Override
 	public String toString() {
 		return "LandDetails [landId=" + landId + ", landAddress=" + landAddress + ", landCity=" + landCity + ", state="
 				+ state + "]";
 	}
-	public LandDetails(int landId, String landAddress, String landCity) {
+	public LandDetails(String landAddress, String landCity,State state) {
 		super();
-		this.landId = landId;
 		this.landAddress = landAddress;
 		this.landCity = landCity;
-
+		this.state=state;
 	}
 	public LandDetails() {
 		super();

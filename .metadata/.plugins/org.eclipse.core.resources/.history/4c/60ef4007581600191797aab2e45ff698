@@ -1,0 +1,8 @@
+package com.lti.service;
+
+import com.lti.model.Farmer;
+
+public interface IFarmerService {
+public void addFarmer(Farmer farmer);
+
+}

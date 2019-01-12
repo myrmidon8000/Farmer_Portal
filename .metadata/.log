@@ -1155,3 +1155,179 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 13:13:28.065
 !MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 14:31:46.141
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 14:31:46.141
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 14:36:12.813
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 14:36:12.813
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 15:22:36.850
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 15:22:36.850
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 15:23:22.368
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 15:23:22.370
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 15:28:00.585
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 15:28:00.585
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 15:36:47.590
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 15:36:47.592
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 15:37:04.251
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 15:37:04.251
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 15:40:27.595
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 15:40:27.595
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 15:41:08.726
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 15:41:08.726
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 15:42:44.182
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 15:42:44.182
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.recommenders.types.rcp 1 4 2019-01-12 16:11:30.778
+!MESSAGE Full project indexing required:
+  [+] C:\Program Files\Java\jdk1.8.0_131\jre\lib\charsets.jar
+  [+] C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\access-bridge-64.jar
+  [+] C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\cldrdata.jar
+  [+] C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\dnsns.jar
+  [+] C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\jaccess.jar
+  [+] C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\jfxrt.jar
+  [+] C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\localedata.jar
+  [+] C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\nashorn.jar
+  [+] C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\sunec.jar
+  [+] C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\sunjce_provider.jar
+  [+] C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\sunmscapi.jar
+  [+] C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\sunpkcs11.jar
+  [+] C:\Program Files\Java\jdk1.8.0_131\jre\lib\ext\zipfs.jar
+  [+] C:\Program Files\Java\jdk1.8.0_131\jre\lib\jce.jar
+  [+] C:\Program Files\Java\jdk1.8.0_131\jre\lib\jfr.jar
+  [+] C:\Program Files\Java\jdk1.8.0_131\jre\lib\jsse.jar
+  [+] C:\Program Files\Java\jdk1.8.0_131\jre\lib\resources.jar
+  [+] C:\Program Files\Java\jdk1.8.0_131\jre\lib\rt.jar
+  [+] C:\Users\vshadmin\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar
+  [+] C:\Users\vshadmin\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar
+  [+] C:\Users\vshadmin\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar
+  [+] C:\Users\vshadmin\.m2\repository\javax\servlet\javax.servlet-api\3.1.0\javax.servlet-api-3.1.0.jar
+  [+] C:\Users\vshadmin\.m2\repository\javax\servlet\jsp\jsp-api\2.2\jsp-api-2.2.jar
+  [+] C:\Users\vshadmin\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar
+  [+] C:\Users\vshadmin\.m2\repository\org\hibernate\common\hibernate-commons-annotations\4.0.2.Final\hibernate-commons-annotations-4.0.2.Final.jar
+  [+] C:\Users\vshadmin\.m2\repository\org\hibernate\hibernate-core\4.2.7.Final\hibernate-core-4.2.7.Final.jar
+  [+] C:\Users\vshadmin\.m2\repository\org\hibernate\hibernate-entitymanager\4.2.7.Final\hibernate-entitymanager-4.2.7.Final.jar
+  [+] C:\Users\vshadmin\.m2\repository\org\hibernate\javax\persistence\hibernate-jpa-2.0-api\1.0.1.Final\hibernate-jpa-2.0-api-1.0.1.Final.jar
+  [+] C:\Users\vshadmin\.m2\repository\org\javassist\javassist\3.18.1-GA\javassist-3.18.1-GA.jar
+  [+] C:\Users\vshadmin\.m2\repository\org\jboss\logging\jboss-logging\3.1.0.GA\jboss-logging-3.1.0.GA.jar
+  [+] C:\Users\vshadmin\.m2\repository\org\jboss\spec\javax\transaction\jboss-transaction-api_1.1_spec\1.0.1.Final\jboss-transaction-api_1.1_spec-1.0.1.Final.jar
+  [+] C:\Users\vshadmin\.m2\repository\org\springframework\spring-core\4.2.7.RELEASE\spring-core-4.2.7.RELEASE.jar
+  [+] C:\Users\vshadmin\.m2\repository\xml-apis\xml-apis\1.0.b2\xml-apis-1.0.b2.jar
+  [+] D:\Farmer_Portal\Jars\Library\aopalliance-1.0.jar
+  [+] D:\Farmer_Portal\Jars\Library\aspectjrt-1.8.9.jar
+  [+] D:\Farmer_Portal\Jars\Library\classmate-1.3.4.jar
+  [+] D:\Farmer_Portal\Jars\Library\jandex-1.1.0.Final.jar
+  [+] D:\Farmer_Portal\Jars\Library\jboss-logging-annotations-1.2.0.Beta1.jar
+  [+] D:\Farmer_Portal\Jars\Library\jcl-over-slf4j-1.7.21.jar
+  [+] D:\Farmer_Portal\Jars\Library\jstl-1.2.jar
+  [+] D:\Farmer_Portal\Jars\Library\jstl.jar
+  [+] D:\Farmer_Portal\Jars\Library\slf4j-api-1.7.21.jar
+  [+] D:\Farmer_Portal\Jars\Library\slf4j-api-1.7.25.jar
+  [+] D:\Farmer_Portal\Jars\Library\slf4j-jdk14-1.7.25.jar
+  [+] D:\Farmer_Portal\Jars\Library\slf4j-log4j12-1.7.25.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-aop-4.0.3.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-aspects-4.0.3.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-beans-4.0.3.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-build-src-4.0.3.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-context-4.0.3.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-context-support-4.0.3.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-core-4.0.3.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-data-commons-1.12.2.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-data-jpa-1.10.2.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-expression-4.0.3.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-framework-bom-4.0.3.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-instrument-4.0.3.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-instrument-tomcat-4.0.3.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-jdbc-4.0.3.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-jms-4.0.3.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-messaging-4.0.3.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-orm-4.0.3.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-oxm-4.0.3.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-security-acl-4.0.0.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-security-config-4.0.4.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-security-core-4.0.0.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-security-taglibs-4.0.0.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-security-web-4.0.0.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-test-4.0.3.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-tx-4.0.3.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-web-4.0.3.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\spring-webmvc-4.0.3.RELEASE.jar
+  [+] D:\Farmer_Portal\Jars\Library\standard-1.1.2.jar
+  [+] D:\Farmer_Portal\Jars\Library\validation-api-1.0.0.GA.jar
+  [+] D:\Farmer_Portal\Jars\Library\validation-api-2.0.0.Final.jar
+  [+] D:\Farmer_Portal\Jars\Library\xpp3_min-1.1.4c.jar
+  [+] D:\Farmer_Portal\Jars\Library\xstream-1.3.1.jar
+  [+] D:\Shaggy\Driver\hibernate-validator.jar
+  [+] D:\Shaggy\Driver\ojdbc14.jar
+
+!STACK 0
+org.eclipse.recommenders.utils.Logs$LogTraceException
+	at org.eclipse.recommenders.utils.Logs$LogTraceException.newTrace(Logs.java:381)
+	at org.eclipse.recommenders.utils.Logs.log(Logs.java:134)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.needsRebuild(ProjectTypesIndex.java:169)
+	at org.eclipse.recommenders.internal.types.rcp.ProjectTypesIndex.startUp(ProjectTypesIndex.java:122)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Thread.java:748)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 16:12:51.126
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 16:12:51.126
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 16:12:58.210
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 16:12:58.225
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 16:21:34.849
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 16:21:34.849
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 16:25:27.313
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2019-01-12 16:25:27.328
+!MESSAGE Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!

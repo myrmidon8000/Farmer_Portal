@@ -70,9 +70,8 @@ public String toString() {
 			+ "]";
 }
 
-public Address(int addressId, String localAddress, String city, State state) {
+public Address(String localAddress, String city, State state) {
 	super();
-	this.addressId = addressId;
 	this.localAddress = localAddress;
 	this.city = city;
 	this.state = state;
