@@ -2,7 +2,7 @@ package com.lti.model;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,9 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
 
+import org.hibernate.validator.NotEmpty;
+import org.hibernate.validator.Size;
 import org.springframework.stereotype.Component;
 
 @Component

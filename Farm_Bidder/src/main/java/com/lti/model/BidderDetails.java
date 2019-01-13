@@ -10,14 +10,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
 
+import org.hibernate.validator.NotEmpty;
+import org.hibernate.validator.Size;
 import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-
 public class BidderDetails implements Serializable {
 
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="bidderdetails_sequence")

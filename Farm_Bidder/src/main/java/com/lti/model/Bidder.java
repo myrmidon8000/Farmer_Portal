@@ -10,8 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
-import javax.validation.constraints.NotEmpty;
 
+import org.hibernate.validator.NotEmpty;
 import org.springframework.stereotype.Component;
 
 @Component

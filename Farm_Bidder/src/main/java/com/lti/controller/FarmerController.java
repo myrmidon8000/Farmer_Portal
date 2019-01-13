@@ -2,11 +2,12 @@ package com.lti.controller;
 
 
 
+
+
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,12 +18,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.lti.model.Farmer;
 import com.lti.service.IFarmerService;
 @Controller
-@Component
+
 public class FarmerController {
-	
-	private IFarmerService farmerService;
 	@Autowired
-	@Qualifier
+	private IFarmerService farmerService;
+	
 	public void setFarmerService(IFarmerService fs) {
 		this.farmerService = fs;
 	}
@@ -32,19 +32,18 @@ public class FarmerController {
 	model.addAttribute("farmer",new Farmer());
 		return "FarmerRegistration";
 	}
-	// For add and update person both
+	// To add a farmer
 			@RequestMapping(value = "/farmer/add", 
 					method = RequestMethod.POST)
-			
 			public String addFarmer(
 					@ModelAttribute("farmer") 
-					@Valid Farmer f, 
+					@Valid Farmer farmer, 
 					BindingResult result, 
 					Model model) {
 				if (!result.hasErrors()) {
 				
 						// new farmer, add it
-						this.farmerService.addFarmer(f);
+						this.farmerService.addFarmer(farmer);
 					} 
 					
 					return "redirect:/farmer";
