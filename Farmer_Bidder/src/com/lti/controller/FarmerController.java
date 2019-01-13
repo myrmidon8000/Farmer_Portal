@@ -30,7 +30,7 @@ public class FarmerController {
 	@RequestMapping(value="/farmer")
 	public String gotofarmerregpage(Model model) {
 	model.addAttribute("farmer",new Farmer());
-		return "FarmerRegistration1";
+		return "FarmerRegistration";
 	}
 	// To add a farmer
 			@RequestMapping(value = "/add", 

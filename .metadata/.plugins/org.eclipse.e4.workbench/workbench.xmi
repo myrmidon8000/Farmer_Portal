@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_NuWLgBcmEemQ4diowQrT_g" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_NuWLgRcmEemQ4diowQrT_g" bindingContexts="_NuWTVRcmEemQ4diowQrT_g">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;FarmerRegistration1.jsp&quot; tooltip=&quot;Farmer_Bidder/WebContent/WEB-INF/views/FarmerRegistration1.jsp&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/WebContent/WEB-INF/views/FarmerRegistration1.jsp&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;FarmerController.java&quot; tooltip=&quot;Farmer_Bidder/src/com/lti/controller/FarmerController.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/src/com/lti/controller/FarmerController.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Bidder.java&quot; tooltip=&quot;Farmer_Bidder/src/com/lti/model/Bidder.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/src/com/lti/model/Bidder.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.springsource.sts.config.ui.editors.SpringConfigEditor&quot; name=&quot;root-context.xml&quot; tooltip=&quot;Farmer_Bidder/WebContent/WEB-INF/spring/root-context.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/WebContent/WEB-INF/spring/root-context.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.springsource.sts.config.ui.editors.SpringConfigEditor&quot; name=&quot;servlet-context.xml&quot; tooltip=&quot;Farmer_Bidder/WebContent/WEB-INF/spring/appServlet/servlet-context.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/WebContent/WEB-INF/spring/appServlet/servlet-context.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;index.jsp&quot; tooltip=&quot;Farmer_Bidder/WebContent/index.jsp&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/WebContent/index.jsp&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;BidderController.java&quot; tooltip=&quot;Farmer_Bidder/src/com/lti/controller/BidderController.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/src/com/lti/controller/BidderController.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;BidderRegistration.jsp&quot; tooltip=&quot;Farmer_Bidder/WebContent/WEB-INF/views/BidderRegistration.jsp&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/WebContent/WEB-INF/views/BidderRegistration.jsp&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;FarmerRegistration.jsp&quot; tooltip=&quot;Farmer_Bidder/WebContent/WEB-INF/views/FarmerRegistration.jsp&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/WebContent/WEB-INF/views/FarmerRegistration.jsp&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Address.java&quot; tooltip=&quot;Farmer_Bidder/src/com/lti/model/Address.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/src/com/lti/model/Address.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart&quot; name=&quot;web.xml&quot; tooltip=&quot;Farmer_Bidder/WebContent/WEB-INF/web.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/WebContent/WEB-INF/web.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;IBidderService.java&quot; tooltip=&quot;Farmer_Bidder/src/com/lti/service/IBidderService.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/src/com/lti/service/IBidderService.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;workbench>&#xD;&#xA;&lt;mruList>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Bidder.java&quot; tooltip=&quot;Farmer_Bidder/src/com/lti/model/Bidder.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/src/com/lti/model/Bidder.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;FarmerRegistration.jsp&quot; tooltip=&quot;Farmer_Bidder/WebContent/WEB-INF/views/FarmerRegistration.jsp&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/WebContent/WEB-INF/views/FarmerRegistration.jsp&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Farmer.java&quot; tooltip=&quot;Farmer_Bidder/src/com/lti/model/Farmer.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/src/com/lti/model/Farmer.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;FarmerDaoImpl.java&quot; tooltip=&quot;Farmer_Bidder/src/com/lti/dao/FarmerDaoImpl.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/src/com/lti/dao/FarmerDaoImpl.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;FarmerController.java&quot; tooltip=&quot;Farmer_Bidder/src/com/lti/controller/FarmerController.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/src/com/lti/controller/FarmerController.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.springsource.ide.eclipse.dashboard.ui.dashboard.elementFactory&quot; id=&quot;org.springsource.ide.eclipse.commons.gettingstarted.dashboard.WelcomeDashboard&quot; name=&quot;Dashboard&quot; tooltip=&quot;Dashboard&quot;>&#xD;&#xA;&lt;persistable openDashboard=&quot;true&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;FarmerRegistration1.jsp&quot; tooltip=&quot;Farmer_Bidder/WebContent/WEB-INF/views/FarmerRegistration1.jsp&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/WebContent/WEB-INF/views/FarmerRegistration1.jsp&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.springsource.sts.config.ui.editors.SpringConfigEditor&quot; name=&quot;root-context.xml&quot; tooltip=&quot;Farmer_Bidder/WebContent/WEB-INF/spring/root-context.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/WebContent/WEB-INF/spring/root-context.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;com.springsource.sts.config.ui.editors.SpringConfigEditor&quot; name=&quot;servlet-context.xml&quot; tooltip=&quot;Farmer_Bidder/WebContent/WEB-INF/spring/appServlet/servlet-context.xml&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/WebContent/WEB-INF/spring/appServlet/servlet-context.xml&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;index.jsp&quot; tooltip=&quot;Farmer_Bidder/WebContent/index.jsp&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/WebContent/index.jsp&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;BidderController.java&quot; tooltip=&quot;Farmer_Bidder/src/com/lti/controller/BidderController.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/src/com/lti/controller/BidderController.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;BidderRegistration.jsp&quot; tooltip=&quot;Farmer_Bidder/WebContent/WEB-INF/views/BidderRegistration.jsp&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/WebContent/WEB-INF/views/BidderRegistration.jsp&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Address.java&quot; tooltip=&quot;Farmer_Bidder/src/com/lti/model/Address.java&quot;>&#xD;&#xA;&lt;persistable path=&quot;/Farmer_Bidder/src/com/lti/model/Address.java&quot;/>&#xD;&#xA;&lt;/file>&#xD;&#xA;&lt;/mruList>&#xD;&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
   <children xsi:type="basic:TrimmedWindow" xmi:id="_NuWLgRcmEemQ4diowQrT_g" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_NuWLghcmEemQ4diowQrT_g" label="%trimmedwindow.label.eclipseSDK" x="0" y="0" width="616" height="768">
@@ -96,14 +96,14 @@
               <children xsi:type="advanced:Placeholder" xmi:id="_NuWLihcmEemQ4diowQrT_g" elementId="org.eclipse.jdt.ui.PackagesView" toBeRendered="false" ref="_NuWQGBcmEemQ4diowQrT_g"/>
             </children>
             <children xsi:type="basic:PartSashContainer" xmi:id="_NuWLixcmEemQ4diowQrT_g" containerData="7654" selectedElement="_NuWLjBcmEemQ4diowQrT_g">
-              <children xsi:type="basic:PartSashContainer" xmi:id="_NuWLjBcmEemQ4diowQrT_g" containerData="9000" selectedElement="_NuWLjRcmEemQ4diowQrT_g" horizontal="true">
+              <children xsi:type="basic:PartSashContainer" xmi:id="_NuWLjBcmEemQ4diowQrT_g" containerData="7629" selectedElement="_NuWLjRcmEemQ4diowQrT_g" horizontal="true">
                 <children xsi:type="advanced:Placeholder" xmi:id="_NuWLjRcmEemQ4diowQrT_g" elementId="org.eclipse.ui.editorss" containerData="7000" ref="_NuWM8BcmEemQ4diowQrT_g"/>
                 <children xsi:type="basic:PartStack" xmi:id="_NuWLjhcmEemQ4diowQrT_g" elementId="topRight" toBeRendered="false" containerData="3000">
                   <children xsi:type="advanced:Placeholder" xmi:id="_NuWLjxcmEemQ4diowQrT_g" elementId="org.eclipse.ui.views.ContentOutline" toBeRendered="false" ref="_NuWQehcmEemQ4diowQrT_g"/>
                   <children xsi:type="advanced:Placeholder" xmi:id="_NuWLkBcmEemQ4diowQrT_g" elementId="org.eclipse.mylyn.tasks.ui.views.tasks" toBeRendered="false" ref="_NuWQfRcmEemQ4diowQrT_g"/>
                 </children>
               </children>
-              <children xsi:type="basic:PartStack" xmi:id="_NuWLkRcmEemQ4diowQrT_g" elementId="bottomRight" containerData="1000" selectedElement="_NuWLmRcmEemQ4diowQrT_g">
+              <children xsi:type="basic:PartStack" xmi:id="_NuWLkRcmEemQ4diowQrT_g" elementId="bottomRight" containerData="2371" selectedElement="_NuWLmRcmEemQ4diowQrT_g">
                 <children xsi:type="advanced:Placeholder" xmi:id="_NuWLkhcmEemQ4diowQrT_g" elementId="org.eclipse.ui.views.AllMarkersView" ref="_NuWQGRcmEemQ4diowQrT_g"/>
                 <children xsi:type="advanced:Placeholder" xmi:id="_NuWLkxcmEemQ4diowQrT_g" elementId="org.eclipse.ui.views.PropertySheet" ref="_NuWQHBcmEemQ4diowQrT_g"/>
                 <children xsi:type="advanced:Placeholder" xmi:id="_NuWLlBcmEemQ4diowQrT_g" elementId="org.eclipse.wst.server.ui.ServersView" ref="_NuWQHxcmEemQ4diowQrT_g"/>
@@ -150,12 +150,12 @@
       <tags>categoryTag:Help</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_NuWM8BcmEemQ4diowQrT_g" elementId="org.eclipse.ui.editorss" selectedElement="_NuWM8RcmEemQ4diowQrT_g">
-      <children xsi:type="basic:PartStack" xmi:id="_NuWM8RcmEemQ4diowQrT_g" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_NuWPnBcmEemQ4diowQrT_g">
+      <children xsi:type="basic:PartStack" xmi:id="_NuWM8RcmEemQ4diowQrT_g" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_NuWOnRcmEemQ4diowQrT_g">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
         <tags>active</tags>
         <children xsi:type="basic:Part" xmi:id="_NuWM8hcmEemQ4diowQrT_g" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="FarmerController.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;FarmerController.java&quot; partName=&quot;FarmerController.java&quot; title=&quot;FarmerController.java&quot; tooltip=&quot;Farm_Bidder/src/main/java/com/lti/controller/FarmerController.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Farm_Bidder/src/main/java/com/lti/controller/FarmerController.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1061&quot; selectionTopPixel=&quot;207&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;FarmerController.java&quot; partName=&quot;FarmerController.java&quot; title=&quot;FarmerController.java&quot; tooltip=&quot;Farm_Bidder/src/main/java/com/lti/controller/FarmerController.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Farm_Bidder/src/main/java/com/lti/controller/FarmerController.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1061&quot; selectionTopPixel=&quot;141&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
@@ -509,7 +509,7 @@
           </menus>
         </children>
         <children xsi:type="basic:Part" xmi:id="_NuWNMhcmEemQ4diowQrT_g" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="FarmerController.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;FarmerController.java&quot; partName=&quot;FarmerController.java&quot; title=&quot;FarmerController.java&quot; tooltip=&quot;Farmer_Bidder/src/com/lti/controller/FarmerController.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Farmer_Bidder/src/com/lti/controller/FarmerController.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;921&quot; selectionTopPixel=&quot;463&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;FarmerController.java&quot; partName=&quot;FarmerController.java&quot; title=&quot;FarmerController.java&quot; tooltip=&quot;Farmer_Bidder/src/com/lti/controller/FarmerController.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Farmer_Bidder/src/com/lti/controller/FarmerController.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;920&quot; selectionTopPixel=&quot;254&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
@@ -531,7 +531,7 @@
           </menus>
         </children>
         <children xsi:type="basic:Part" xmi:id="_NuWNNhcmEemQ4diowQrT_g" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="FarmerRegistration.jsp" iconURI="platform:/plugin/org.eclipse.jst.jsp.ui/icons/full/obj16/sourceEditor.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;FarmerRegistration.jsp&quot; partName=&quot;FarmerRegistration.jsp&quot; title=&quot;FarmerRegistration.jsp&quot; tooltip=&quot;Farmer_Bidder/WebContent/WEB-INF/views/FarmerRegistration.jsp&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Farmer_Bidder/WebContent/WEB-INF/views/FarmerRegistration.jsp&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;4677&quot; selectionOffset=&quot;0&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;FarmerRegistration.jsp&quot; partName=&quot;FarmerRegistration.jsp&quot; title=&quot;FarmerRegistration.jsp&quot; tooltip=&quot;Farmer_Bidder/WebContent/WEB-INF/views/FarmerRegistration.jsp&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Farmer_Bidder/WebContent/WEB-INF/views/FarmerRegistration.jsp&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;297&quot; selectionTopPixel=&quot;598&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jst.jsp.core.jspsource.source</tags>
           <tags>removeOnHide</tags>
@@ -627,7 +627,7 @@
           </menus>
         </children>
         <children xsi:type="basic:Part" xmi:id="_NuWNZhcmEemQ4diowQrT_g" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Farmer.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Farmer.java&quot; partName=&quot;Farmer.java&quot; title=&quot;Farmer.java&quot; tooltip=&quot;Farmer_Bidder/src/com/lti/model/Farmer.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Farmer_Bidder/src/com/lti/model/Farmer.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;3231&quot; selectionTopPixel=&quot;966&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Farmer.java&quot; partName=&quot;Farmer.java&quot; title=&quot;Farmer.java&quot; tooltip=&quot;Farmer_Bidder/src/com/lti/model/Farmer.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Farmer_Bidder/src/com/lti/model/Farmer.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2919&quot; selectionTopPixel=&quot;436&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
@@ -873,7 +873,7 @@
           </menus>
         </children>
         <children xsi:type="basic:Part" xmi:id="_NuWOiRcmEemQ4diowQrT_g" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="FarmerDaoImpl.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;FarmerDaoImpl.java&quot; partName=&quot;FarmerDaoImpl.java&quot; title=&quot;FarmerDaoImpl.java&quot; tooltip=&quot;Farmer_Bidder/src/com/lti/dao/FarmerDaoImpl.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Farmer_Bidder/src/com/lti/dao/FarmerDaoImpl.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;224&quot; selectionOffset=&quot;700&quot; selectionTopPixel=&quot;69&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;FarmerDaoImpl.java&quot; partName=&quot;FarmerDaoImpl.java&quot; title=&quot;FarmerDaoImpl.java&quot; tooltip=&quot;Farmer_Bidder/src/com/lti/dao/FarmerDaoImpl.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Farmer_Bidder/src/com/lti/dao/FarmerDaoImpl.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;798&quot; selectionTopPixel=&quot;198&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
@@ -980,10 +980,12 @@
           <tags>removeOnHide</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_NuWOnRcmEemQ4diowQrT_g" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Bidder.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Bidder.java&quot; partName=&quot;Bidder.java&quot; title=&quot;Bidder.java&quot; tooltip=&quot;Farmer_Bidder/src/com/lti/model/Bidder.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Farmer_Bidder/src/com/lti/model/Bidder.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1004&quot; selectionTopPixel=&quot;621&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Bidder.java&quot; partName=&quot;Bidder.java&quot; title=&quot;Bidder.java&quot; tooltip=&quot;Farmer_Bidder/src/com/lti/model/Bidder.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Farmer_Bidder/src/com/lti/model/Bidder.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1897&quot; selectionTopPixel=&quot;288&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
+          <tags>active</tags>
+          <tags>activeOnClose</tags>
           <menus xsi:type="menu:PopupMenu" xmi:id="_NuWOnhcmEemQ4diowQrT_g" elementId="#CompilationUnitEditorContext">
             <tags>menuContribution:popup</tags>
             <tags>popup:#CompilationUnitEditorContext</tags>
@@ -1144,11 +1146,10 @@
           </menus>
         </children>
         <children xsi:type="basic:Part" xmi:id="_NuWPnBcmEemQ4diowQrT_g" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="FarmerRegistration1.jsp" iconURI="platform:/plugin/org.eclipse.jst.jsp.ui/icons/full/obj16/sourceEditor.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;FarmerRegistration1.jsp&quot; partName=&quot;FarmerRegistration1.jsp&quot; title=&quot;FarmerRegistration1.jsp&quot; tooltip=&quot;Farmer_Bidder/WebContent/WEB-INF/views/FarmerRegistration1.jsp&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Farmer_Bidder/WebContent/WEB-INF/views/FarmerRegistration1.jsp&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;3754&quot; selectionTopPixel=&quot;1410&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jst.jsp.core.jspsource.source&quot; name=&quot;FarmerRegistration1.jsp&quot; partName=&quot;FarmerRegistration1.jsp&quot; title=&quot;FarmerRegistration1.jsp&quot; tooltip=&quot;Farmer_Bidder/WebContent/WEB-INF/views/FarmerRegistration1.jsp&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Farmer_Bidder/WebContent/WEB-INF/views/FarmerRegistration1.jsp&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;3754&quot; selectionTopPixel=&quot;1426&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jst.jsp.core.jspsource.source</tags>
           <tags>removeOnHide</tags>
-          <tags>active</tags>
           <menus xsi:type="menu:PopupMenu" xmi:id="_NuWPnRcmEemQ4diowQrT_g" elementId="org.eclipse.jst.jsp.core.jspsource.source.EditorContext">
             <tags>menuContribution:popup</tags>
             <tags>popup:org.eclipse.jst.jsp.core.jspsource.source.EditorContext</tags>
@@ -1247,6 +1248,7 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot;>&#xD;&#xA;&lt;lastRecentlyUsedFilters/>&#xD;&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:Server</tags>
+      <tags>highlighted</tags>
       <menus xmi:id="_NuWQIBcmEemQ4diowQrT_g" elementId="org.eclipse.wst.server.ui.ServersView">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -1361,43 +1363,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_NuWQgxcmEemQ4diowQrT_g" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQhBcmEemQ4diowQrT_g" elementId="new.group">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQhRcmEemQ4diowQrT_g" elementId="newWizardDropDown">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQhhcmEemQ4diowQrT_g" elementId="new.ext" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQhxcmEemQ4diowQrT_g" elementId="save.group" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQiBcmEemQ4diowQrT_g" elementId="save">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQiRcmEemQ4diowQrT_g" elementId="saveAll">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQihcmEemQ4diowQrT_g" elementId="save.ext" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_NuWQixcmEemQ4diowQrT_g" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_NuWdVxcmEemQ4diowQrT_g"/>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQjBcmEemQ4diowQrT_g" elementId="print.ext" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQjRcmEemQ4diowQrT_g" elementId="build.group">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQjhcmEemQ4diowQrT_g" elementId="build.ext" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQjxcmEemQ4diowQrT_g" elementId="additions">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQkBcmEemQ4diowQrT_g" elementId="build">
-          <tags>Opaque</tags>
-        </children>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_qKRkJxcnEem9k_nzQyvadw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_NuWdVxcmEemQ4diowQrT_g"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_NuWQkRcmEemQ4diowQrT_g" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -1405,111 +1371,24 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_NuWQ1hcmEemQ4diowQrT_g" elementId="org.eclipse.debug.ui.launchActionSet">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ1xcmEemQ4diowQrT_g" elementId="debug">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ2BcmEemQ4diowQrT_g" elementId="org.eclipse.debug.internal.ui.actions.DebugDropDownAction">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ2RcmEemQ4diowQrT_g" elementId="org.eclipse.debug.internal.ui.actions.RunDropDownAction">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ2hcmEemQ4diowQrT_g" elementId="org.eclipse.eclemma.ui.actions.CoverageDropDownAction">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ2xcmEemQ4diowQrT_g" elementId="org.eclipse.ui.externaltools.ExternalToolMenuDelegateToolbar">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ3BcmEemQ4diowQrT_g" elementId="org.springsource.ide.eclipse.commons.launch.stop.action">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ3RcmEemQ4diowQrT_g" elementId="org.springsource.ide.eclipse.commons.launch.relaunch.action">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_NuWQ3hcmEemQ4diowQrT_g" elementId="org.eclipse.jdt.ui.JavaElementCreationActionSet">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ3xcmEemQ4diowQrT_g" elementId="JavaWizards">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ4BcmEemQ4diowQrT_g" elementId="openajprojectwizard">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_NuWQ4RcmEemQ4diowQrT_g" elementId="org.eclipse.jst.j2ee.J2eeMainActionSet">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ4hcmEemQ4diowQrT_g" elementId="J2EEMain">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ4xcmEemQ4diowQrT_g" elementId="org.eclipse.jst.j2ee.internal.actions.NewJavaEEProject">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ5BcmEemQ4diowQrT_g" elementId="org.eclipse.jst.j2ee.internal.actions.NewJavaEEArtifact">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_NuWQ5RcmEemQ4diowQrT_g" elementId="org.eclipse.search.searchActionSet">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ5hcmEemQ4diowQrT_g" elementId="Search">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ5xcmEemQ4diowQrT_g" elementId="openType">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ6BcmEemQ4diowQrT_g" elementId="org.eclipse.mylyn.tasks.ui.openTask">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ6RcmEemQ4diowQrT_g" elementId="org.eclipse.search.OpenSearchDialogPage">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ6hcmEemQ4diowQrT_g" elementId="org.springframework.ide.eclipse.beans.ui.openBeanAction">
-          <tags>Opaque</tags>
-        </children>
       </children>
-      <children xsi:type="menu:ToolBar" xmi:id="_NuWQ6xcmEemQ4diowQrT_g" elementId="org.eclipse.ui.edit.text.actionSet.presentation" visible="false">
+      <children xsi:type="menu:ToolBar" xmi:id="_NuWQ6xcmEemQ4diowQrT_g" elementId="org.eclipse.ui.edit.text.actionSet.presentation">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ7BcmEemQ4diowQrT_g" elementId="Presentation">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ7RcmEemQ4diowQrT_g" elementId="org.eclipse.mylyn.java.ui.editor.folding.auto">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ7hcmEemQ4diowQrT_g" elementId="org.eclipse.jdt.ui.edit.text.java.toggleBreadcrumb">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ7xcmEemQ4diowQrT_g" elementId="org.eclipse.jdt.ui.edit.text.java.toggleMarkOccurrences">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ8BcmEemQ4diowQrT_g" elementId="org.eclipse.ui.edit.text.toggleWordWrap">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ8RcmEemQ4diowQrT_g" elementId="org.eclipse.ui.edit.text.toggleBlockSelectionMode">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ8hcmEemQ4diowQrT_g" elementId="org.eclipse.ui.edit.text.toggleShowWhitespaceCharacters">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ8xcmEemQ4diowQrT_g" elementId="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly" visible="false">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_NuWQ9BcmEemQ4diowQrT_g" elementId="org.eclipse.wst.server.ui.internal.webbrowser.actionSet">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ9RcmEemQ4diowQrT_g" elementId="browser">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ9hcmEemQ4diowQrT_g" elementId="org.eclipse.wst.server.ui.internal.webbrowser.action.open">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_NuWQ9xcmEemQ4diowQrT_g" elementId="org.eclipse.wst.ws.explorer.explorer">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ-BcmEemQ4diowQrT_g" elementId="additions">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ-RcmEemQ4diowQrT_g" elementId="org.eclipse.wst.ws.internal.explorer.action.LaunchWSEAction">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_NuWQ-hcmEemQ4diowQrT_g" elementId="group.nav" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -1517,57 +1396,12 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_NuWQ_BcmEemQ4diowQrT_g" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ_RcmEemQ4diowQrT_g" elementId="history.group">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ_hcmEemQ4diowQrT_g" elementId="group.application" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWQ_xcmEemQ4diowQrT_g" elementId="backardHistory">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWRABcmEemQ4diowQrT_g" elementId="forwardHistory">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWRARcmEemQ4diowQrT_g" elementId="pin.group">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_NuWRAhcmEemQ4diowQrT_g" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_NuWc9xcmEemQ4diowQrT_g"/>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWRAxcmEemQ4diowQrT_g" elementId="org.eclipse.ui.edit.text.gotoNextAnnotation">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWRBBcmEemQ4diowQrT_g" elementId="org.eclipse.ui.edit.text.gotoPreviousAnnotation">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWRBRcmEemQ4diowQrT_g" elementId="org.eclipse.ui.edit.text.gotoLastEditPosition">
-          <tags>Opaque</tags>
-        </children>
-      </children>
-      <children xsi:type="menu:ToolBar" xmi:id="_NuWRBhcmEemQ4diowQrT_g" elementId="org.eclipse.jdt.ui.CompilationUnitEditor" visible="false">
-        <tags>Draggable</tags>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_qKRkMRcnEem9k_nzQyvadw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_NuWc9xcmEemQ4diowQrT_g"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_NuWRBxcmEemQ4diowQrT_g" elementId="com.springsource.sts.config.ui.editors.SpringConfigEditor" visible="false">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWRCBcmEemQ4diowQrT_g" elementId="springConfig" visible="false">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWRCRcmEemQ4diowQrT_g">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWRChcmEemQ4diowQrT_g">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWRCxcmEemQ4diowQrT_g" elementId="org.eclipse.gef.zoom_widget">
-          <tags>Opaque</tags>
-        </children>
-      </children>
-      <children xsi:type="menu:ToolBar" xmi:id="_NuWRDBcmEemQ4diowQrT_g" elementId="org.eclipse.jst.jsp.core.jspsource.source" visible="false">
-        <tags>Draggable</tags>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_NuWRDRcmEemQ4diowQrT_g" elementId="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" visible="false">
-        <tags>Draggable</tags>
-      </children>
-      <children xsi:type="menu:ToolBar" xmi:id="_NuWRDhcmEemQ4diowQrT_g" elementId="org.eclipse.ui.browser.editor" visible="false">
         <tags>Draggable</tags>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_NuWRDxcmEemQ4diowQrT_g" elementId="group.editor" toBeRendered="false">
@@ -1580,12 +1414,6 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_NuWRExcmEemQ4diowQrT_g" elementId="org.eclipse.ui.workbench.help" visible="false">
         <tags>Draggable</tags>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWRFBcmEemQ4diowQrT_g" elementId="group.help">
-          <tags>Opaque</tags>
-        </children>
-        <children xsi:type="menu:DirectToolItem" xmi:id="_NuWRFRcmEemQ4diowQrT_g" elementId="group.application" visible="false">
-          <tags>Opaque</tags>
-        </children>
       </children>
       <children xsi:type="menu:ToolControl" xmi:id="_NuWRFhcmEemQ4diowQrT_g" elementId="PerspectiveSpacer" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
         <tags>stretch</tags>
@@ -2998,6 +2826,23 @@
     <tags>View</tags>
     <tags>categoryTag:Spring</tags>
   </descriptors>
+  <trimContributions xmi:id="_2r10UF9tEeO-yojH_y4TJA" elementId="org.eclipse.ui.ide.application.trimcontribution.QuickAccess" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" toBeRendered="false" parentId="org.eclipse.ui.main.toolbar" positionInParent="last">
+    <children xsi:type="menu:ToolControl" xmi:id="_76uUAF9tEeO-yojH_y4TJA" elementId="Spacer Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
+      <tags>glue</tags>
+      <tags>move_after:PerspectiveSpacer</tags>
+      <tags>SHOW_RESTORE_MENU</tags>
+    </children>
+    <children xsi:type="menu:ToolControl" xmi:id="_8tJPcF9tEeO-yojH_y4TJA" elementId="SearchField" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.quickaccess.SearchField">
+      <tags>move_after:Spacer Glue</tags>
+      <tags>HIDEABLE</tags>
+      <tags>SHOW_RESTORE_MENU</tags>
+    </children>
+    <children xsi:type="menu:ToolControl" xmi:id="_9LgmcF9tEeO-yojH_y4TJA" elementId="Search-PS Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
+      <tags>glue</tags>
+      <tags>move_after:SearchField</tags>
+      <tags>SHOW_RESTORE_MENU</tags>
+    </children>
+  </trimContributions>
   <commands xmi:id="_NuWZzBcmEemQ4diowQrT_g" elementId="org.eclipse.ui.window.customizePerspective" contributorURI="platform:/plugin/org.eclipse.platform"/>
   <commands xmi:id="_NuWZzRcmEemQ4diowQrT_g" elementId="org.eclipse.jdt.ui.correction.inlineLocal.assist" commandName="Quick Assist - Inline local variable" description="Invokes quick assist and selects 'Inline local variable'" category="_NuWfHhcmEemQ4diowQrT_g"/>
   <commands xmi:id="_NuWZzhcmEemQ4diowQrT_g" elementId="org.eclipse.ui.edit.text.select.pageUp" commandName="Select Page Up" description="Select to the top of the page" category="_NuWe6xcmEemQ4diowQrT_g"/>

@@ -30,7 +30,7 @@ private String farmerName;
 @Column
 @NotEmpty(message = "Phone Number cannot be empty!")
 @Size(max=10, min=10, message="Phone Number Should be 10 number long" )
-private int phoneNumber;
+private long phoneNumber;
 
 @OneToOne(cascade=CascadeType.ALL)
 private Login login;
@@ -71,10 +71,10 @@ public Farmer() {
 	super();
 	// TODO Auto-generated constructor stub
 }
-public int getPhoneNumber() {
+public long getPhoneNumber() {
 	return phoneNumber;
 }
-public void setPhoneNumber(int phoneNumber) {
+public void setPhoneNumber(long phoneNumber) {
 	this.phoneNumber = phoneNumber;
 }
 public BankDetails getBankDetails() {
@@ -107,7 +107,7 @@ public String toString() {
 			+ login + ", bankDetails=" + bankDetails + ", address=" + address + ", landDetails=" + landDetails
 			+ ", documentDetails=" + documentDetails + "]";
 }
-public Farmer(String farmerName, int phoneNumber, Login login, BankDetails bankDetails, Address address,
+public Farmer(String farmerName, long phoneNumber, Login login, BankDetails bankDetails, Address address,
 		LandDetails landDetails, DocumentDetails documentDetails) {
 	super();
 
