@@ -36,7 +36,7 @@ Registration for farmer.
 		 <form:input path="farmerName" />
 		 <br/>
 	<br/>
-		 <form:label path="phoneNumber" type="number">
+		 <form:label path="phoneNumber">
 				<spring:message text="Phone Number" />
 			</form:label>
 		 <form:input path="phoneNumber" />

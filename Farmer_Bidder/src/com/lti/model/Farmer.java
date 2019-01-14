@@ -1,6 +1,7 @@
 package com.lti.model;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -8,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
@@ -30,7 +32,7 @@ private String farmerName;
 @Column
 @NotEmpty(message = "Phone Number cannot be empty!")
 @Size(max=10, min=10, message="Phone Number Should be 10 number long" )
-private long phoneNumber;
+private String phoneNumber;
 
 @OneToOne(cascade=CascadeType.ALL)
 private Login login;
@@ -48,6 +50,8 @@ private LandDetails landDetails;
 @OneToOne(cascade=CascadeType.ALL)
 private DocumentDetails documentDetails;
 
+@OneToMany(cascade=CascadeType.ALL,mappedBy="farmer")
+private Set<PotentialCrop> cropList;
 
 public Login getLogin() {
 	return login;
@@ -71,10 +75,10 @@ public Farmer() {
 	super();
 	// TODO Auto-generated constructor stub
 }
-public long getPhoneNumber() {
+public String getPhoneNumber() {
 	return phoneNumber;
 }
-public void setPhoneNumber(long phoneNumber) {
+public void setPhoneNumber(String phoneNumber) {
 	this.phoneNumber = phoneNumber;
 }
 public BankDetails getBankDetails() {
@@ -101,13 +105,14 @@ public DocumentDetails getDocumentDetails() {
 public void setDocumentDetails(DocumentDetails documentDetails) {
 	this.documentDetails = documentDetails;
 }
+
 @Override
 public String toString() {
 	return "Farmer [farmerId=" + farmerId + ", farmerName=" + farmerName + ", phoneNumber=" + phoneNumber + ", login="
 			+ login + ", bankDetails=" + bankDetails + ", address=" + address + ", landDetails=" + landDetails
-			+ ", documentDetails=" + documentDetails + "]";
+			+ ", documentDetails=" + documentDetails + ", cropList=" + cropList + "]";
 }
-public Farmer(String farmerName, long phoneNumber, Login login, BankDetails bankDetails, Address address,
+public Farmer(String farmerName, String phoneNumber, Login login, BankDetails bankDetails, Address address,
 		LandDetails landDetails, DocumentDetails documentDetails) {
 	super();
 
@@ -118,6 +123,12 @@ public Farmer(String farmerName, long phoneNumber, Login login, BankDetails bank
 	this.address = address;
 	this.landDetails = landDetails;
 	this.documentDetails = documentDetails;
+}
+public Set<PotentialCrop> getCropList() {
+	return cropList;
+}
+public void setCropList(Set<PotentialCrop> cropList) {
+	this.cropList = cropList;
 }
 
 

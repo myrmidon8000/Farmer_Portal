@@ -41,25 +41,26 @@ public class FarmerController {
 				}
 		
 			
-			@RequestMapping(value = "/farmer/login")
+			@RequestMapping(value = "/farmerlogin")
 			public String LoginPage(Model model) {
 				model.addAttribute("login",new Login());
 				return "FarmerLogin";
 			}
 					
-		@RequestMapping(value = "/farmerlogin", 
+		@RequestMapping(value = "/farmerloginprocess", 
 					method = RequestMethod.POST)
 			public String farmerLogin(
 					@ModelAttribute("login") 
 					@Valid Login login, 
 					BindingResult result, 
 					Model model) {
+			System.out.println(login);
 				if(this.iFarmerService.loginFarmer(login))
 				{
 					return "SuccessFarmer";
 				}
 				else
-					return "redirect:/farmer/login";
+					return "redirect:/farmerlogin";
 				
 		}
 }

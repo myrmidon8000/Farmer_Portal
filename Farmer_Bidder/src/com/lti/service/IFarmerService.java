@@ -8,5 +8,5 @@ import com.lti.model.Login;
 @Service
 public interface IFarmerService {
 public void addFarmer(Farmer farmer);
-public boolean  loginFarmer(Login login);
+public boolean loginFarmer(Login login);
 }

@@ -36,6 +36,7 @@
 				<value>com.lti.model.Farmer</value>
 				<value>com.lti.model.LandDetails</value>
 				<value>com.lti.model.Login</value>
+				<value>com.lti.model.PotentialCrop</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

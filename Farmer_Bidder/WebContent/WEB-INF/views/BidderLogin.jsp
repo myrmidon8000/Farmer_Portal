@@ -16,7 +16,7 @@ prefix="form" %>
 <h1>
 Login for Bidder.
 </h1>
-<form:form action="bidderlogin" 
+<form:form action="bidderloginprocess" 
 	modelAttribute="login" method="POST">
 	
 	<form:label path="email">

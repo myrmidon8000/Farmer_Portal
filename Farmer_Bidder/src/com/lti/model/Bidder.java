@@ -31,7 +31,7 @@ public class Bidder implements Serializable{
 	@Column
 	@NotEmpty(message = "Phone Number cannot be empty!")
 	@Size(max=10, min=10, message="Phone Number Should be 10 number long" )
-	private long phoneNumber;
+	private String phoneNumber;
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	private BankDetails bankDetails;
@@ -45,11 +45,11 @@ public class Bidder implements Serializable{
 	@OneToOne(cascade=CascadeType.ALL)
 	private Login login;
 	
-	public long getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(long phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}	
 
@@ -77,7 +77,7 @@ public class Bidder implements Serializable{
 		this.login = login;
 	}
 
-	public Bidder(String bidderName, long phoneNumber, BankDetails bankDetails, Address address,
+	public Bidder(String bidderName, String phoneNumber, BankDetails bankDetails, Address address,
 			DocumentDetails documentDetails, Login login) {
 		super();
 		this.bidderName = bidderName;

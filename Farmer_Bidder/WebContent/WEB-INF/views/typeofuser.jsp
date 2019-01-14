@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="farmer/login">Farmer Login</a>
-<a href="bidder/login">Bidder Login</a>
+<a href="farmerlogin">Farmer Login</a>
+<a href="bidderlogin">Bidder Login</a>
 </body>
 </html>

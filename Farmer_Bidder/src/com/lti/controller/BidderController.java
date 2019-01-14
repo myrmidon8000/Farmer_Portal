@@ -40,12 +40,12 @@ public class BidderController {
 						this.iBidderService.addBidder(bidder);
 					return "redirect:/login";
 				}
-			@RequestMapping(value = "/bidder/login")
+			@RequestMapping(value = "/bidderlogin")
 			public String LoginPage1(Model model) {
 				model.addAttribute("login",new Login());
 				return "BidderLogin";
 			}					
-		@RequestMapping(value = "/bidderlogin", 
+		@RequestMapping(value = "/bidderloginprocess", 
 					method = RequestMethod.POST)
 			public String bidderLogin(
 					@ModelAttribute("login") 
@@ -56,7 +56,7 @@ public class BidderController {
 				if(this.iBidderService.loginBidder(login))
 					return "SuccessBidder";
 				else
-					return "redirect:/bidder/login";
+					return "redirect:/bidderlogin";
 		}
 
 }

@@ -16,7 +16,7 @@ prefix="form" %>
 <h1>
 Login for farmer.
 </h1>
-<form:form action="farmerlogin" 
+<form:form action="farmerloginprocess" 
 	modelAttribute="login" method="POST">
 	
 	<form:label path="email">
