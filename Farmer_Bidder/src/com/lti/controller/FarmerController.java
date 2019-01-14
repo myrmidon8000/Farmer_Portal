@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.lti.model.Farmer;
 import com.lti.model.Login;
+import com.lti.model.PotentialCrop;
 import com.lti.service.IFarmerService;
 @Controller
 public class FarmerController {
@@ -54,13 +55,29 @@ public class FarmerController {
 					@Valid Login login, 
 					BindingResult result, 
 					Model model) {
-			System.out.println(login);
 				if(this.iFarmerService.loginFarmer(login))
 				{
-					return "SuccessFarmer";
+					return "HomeFarmer";
 				}
 				else
 					return "redirect:/farmerlogin";
 				
+		}
+		
+		@RequestMapping(value="/sellcrop")
+		public String sellCrop(Model model) {
+		model.addAttribute("potentialcrop",new PotentialCrop());
+			return "CropSell";
+		}
+		
+		@RequestMapping(value="/sellcropprocess", 
+				method = RequestMethod.POST)
+		public String addCrop(@ModelAttribute("potentialcrop") 
+					@Valid PotentialCrop potentialcrop, 
+					BindingResult result, 
+					Model model) {
+			this.iFarmerService.addCrop(potentialcrop);
+			return "HomeFarmer";
+			
 		}
 }

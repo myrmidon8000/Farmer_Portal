@@ -8,3 +8,4 @@ create sequence farmer_sequence start with 296786 increment by 1 nocache;
 create sequence bidder_sequence start with 5864690 increment by 1 nocache;
 create sequence farmerdetails_sequence start with 90000 increment by 1 nocache;
 create sequence document_sequence start with 600 increment by 1 nocache;
+create sequence crop_sequence start with 9500 increment by 1 nocache;

@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.lti.dao.IFarmerDao;
 import com.lti.model.Farmer;
 import com.lti.model.Login;
+import com.lti.model.PotentialCrop;
 @Service
 @Transactional
 public class FarmerServiceImpl implements IFarmerService{
@@ -29,6 +30,13 @@ public class FarmerServiceImpl implements IFarmerService{
 	public boolean loginFarmer(Login login) {
 	return this.iFarmerDao.loginFarmers(login);
 	
+	}
+
+
+	@Override
+	public void addCrop(PotentialCrop potentialcrop) {
+		this.iFarmerDao.addCrops(potentialcrop);
+		
 	}
 
 

@@ -13,6 +13,7 @@ import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import com.lti.model.Farmer;
 import com.lti.model.Login;
+import com.lti.model.PotentialCrop;
 @Repository
 public class FarmerDaoImpl implements IFarmerDao{
 	@Autowired
@@ -50,6 +51,24 @@ public class FarmerDaoImpl implements IFarmerDao{
 		else
 			return true;
 		
+	}
+	@Autowired
+	private Farmer farmer;
+	
+	
+	public void setFarmer(Farmer farmer) {
+		this.farmer = farmer;
+	}
+	@Override
+	public void addCrops(PotentialCrop potentialcrop) {
+		farmer = potentialcrop.getFarmer();
+		System.out.println(farmer);
+		Session session = this.sessionFactory.openSession();
+		Transaction tx=session.beginTransaction();
+		session.save(potentialcrop);
+		logger.info("Crop details saved successfully as: "+potentialcrop);
+		tx.commit();
+		session.close();
 	}
 	
 
