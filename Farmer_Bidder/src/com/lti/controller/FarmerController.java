@@ -1,10 +1,5 @@
 package com.lti.controller;
 
-
-
-
-
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +14,6 @@ import com.lti.model.Farmer;
 import com.lti.model.Login;
 import com.lti.service.IFarmerService;
 @Controller
-
 public class FarmerController {
 	@Autowired
 	private IFarmerService iFarmerService;
@@ -43,30 +37,29 @@ public class FarmerController {
 					Model model) {
 						// new farmer, add it
 						this.iFarmerService.addFarmer(farmer);
-					
 					return "redirect:/login";
 				}
-			@RequestMapping(value = "/login")
+		
+			
+			@RequestMapping(value = "/farmer/login")
 			public String LoginPage(Model model) {
 				model.addAttribute("login",new Login());
-				return "Login";
+				return "FarmerLogin";
 			}
 					
-					
-					
-		@RequestMapping(value = "/loginprocess", 
+		@RequestMapping(value = "/farmerlogin", 
 					method = RequestMethod.POST)
-			public String farmerSignin(
+			public String farmerLogin(
 					@ModelAttribute("login") 
 					@Valid Login login, 
 					BindingResult result, 
 					Model model) {
 				if(this.iFarmerService.loginFarmer(login))
 				{
-					return "Success";
+					return "SuccessFarmer";
 				}
 				else
-					return "Failure";
+					return "redirect:/farmer/login";
 				
 		}
 }

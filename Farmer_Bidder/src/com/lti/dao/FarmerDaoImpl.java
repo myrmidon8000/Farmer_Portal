@@ -43,10 +43,13 @@ public class FarmerDaoImpl implements IFarmerDao{
 		q.setString("email", email);
 		q.setString("password",password);
 		List<Login> farmerList=q.list();
+		tx.commit();
+		session.close();
 		if(farmerList.size()==0)
 		return false;
 		else
 			return true;
+		
 	}
 	
 

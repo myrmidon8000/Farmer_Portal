@@ -9,6 +9,6 @@
 <body>
 <a href="farmer">Farmer Registration</a>
 <a href="bidder">Bidder Registration</a>
-<a href="login">Farmer Login</a>
+<a href="login">Login</a>
 </body>
 </html>

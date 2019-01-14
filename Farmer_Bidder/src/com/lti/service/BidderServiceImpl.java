@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.lti.dao.IBidderDao;
 import com.lti.model.Bidder;
+import com.lti.model.Login;
 
 @Service
 @Transactional
@@ -23,6 +24,13 @@ public class BidderServiceImpl implements IBidderService{
 	public void addBidder(Bidder bidder) {
 		this.iBidderDao.addBidders(bidder);
 		
+	}
+
+
+	@Override
+	public boolean loginBidder(Login login) {
+		
+		return this.iBidderDao.loginBidders(login);
 	}
 
 }
