@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.lti.model.Farmer;
+import com.lti.model.Login;
 import com.lti.service.IFarmerService;
 @Controller
 
@@ -40,31 +41,32 @@ public class FarmerController {
 					@Valid Farmer farmer, 
 					BindingResult result, 
 					Model model) {
-				System.out.println(farmer);
 						// new farmer, add it
 						this.iFarmerService.addFarmer(farmer);
 					
-					return "redirect:/farmer";
+					return "redirect:/login";
 				}
+			@RequestMapping(value = "/login")
+			public String LoginPage(Model model) {
+				model.addAttribute("login",new Login());
+				return "Login";
+			}
+					
+					
+					
+		@RequestMapping(value = "/loginprocess", 
+					method = RequestMethod.POST)
+			public String farmerSignin(
+					@ModelAttribute("login") 
+					@Valid Login login, 
+					BindingResult result, 
+					Model model) {
+				if(this.iFarmerService.loginFarmer(login))
+				{
+					return "Success";
+				}
+				else
+					return "Failure";
 				
-	/*@RequestMapping(value="farmer/add", method = RequestMethod.POST)
-	public String farmerRegister(@ModelAttribute("farmer") 
-	@Valid Farmer f, 
-	BindingResult result, 
-	Model model)
-	{
-		if (!result.hasErrors()) {
-				// new person, add it
-				this.farmerService.addFarmer(f);
-			} else {
-		logger.
-		
-		
-		return null;
-	}
-	public String farmerReg(Model model) {
-		model.addAttribute("person", new Farmer());
-		model.addAttribute("farmerReg",this.farmerService.farmerReg());
-		return "farmer";
-	}*/
+		}
 }

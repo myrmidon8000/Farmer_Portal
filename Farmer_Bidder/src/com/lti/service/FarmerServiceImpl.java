@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.lti.dao.IFarmerDao;
 import com.lti.model.Farmer;
+import com.lti.model.Login;
 @Service
 @Transactional
 public class FarmerServiceImpl implements IFarmerService{
@@ -21,6 +22,13 @@ public class FarmerServiceImpl implements IFarmerService{
 	public void addFarmer(Farmer farmer) {
 		this.iFarmerDao.addFarmers(farmer);
 		
+	}
+
+
+	@Override
+	public boolean loginFarmer(Login login) {
+	return this.iFarmerDao.loginFarmers(login);
+	
 	}
 
 

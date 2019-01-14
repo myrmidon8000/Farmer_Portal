@@ -8,7 +8,7 @@ prefix="form" %>
 
 <html>
 <head>
-	<title>Person Page</title>
+	<title>Farmer Registration</title>
 
 
 </head>
@@ -18,15 +18,15 @@ Registration for farmer.
 </h1>
 <%-- <c:url var="registerAction" value="/farmer/add" ></c:url> --%>
 <form:form action="add" 
-	modelAttribute="farmer">
-	<c:if test="${!empty farmer.farmerName}"><br/>
+	modelAttribute="farmer" method="POST">
+<c:if test="${!empty farmer.farmerName}"><br/>
 		<form:label path="farmerId">
 				<spring:message text="Farmer ID"/>
 			</form:label>
 		<form:input path="farmerId" readonly="true" 
 			size="10"  disabled="true" />
 			<form:hidden path="farmerId" />
-	 </c:if> 
+	 </c:if>  
 	<br/>
 	<br/>
 			<form:label path="farmerName">
@@ -157,6 +157,7 @@ Registration for farmer.
 			</form:label>
 	
 		 <form:input path="documentDetails.traderLicenseNumber"  />
+		 
 		 <input type="submit" class="button"
 					value= "Submit"/>
 			<%-- <c:if test="${!empty farmer.farmerName}">

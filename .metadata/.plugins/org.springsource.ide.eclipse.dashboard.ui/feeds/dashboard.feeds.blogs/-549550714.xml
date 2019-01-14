@@ -5,7 +5,134 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-01-12T04:52:25Z</updated>
+  <updated>2019-01-14T00:00:00Z</updated>
+  <entry>
+    <title>Bootiful Azure: Integration with Azure Service Bus (4/6)</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/01/14/bootiful-azure-integration-with-azure-service-bus-4-6" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-01-02:3518</id>
+    <updated>2019-01-14T00:00:00Z</updated>
+    <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;This is part 1 of a 6 part series, with new posts Mondays and Thursdays, introducing Microsoft Azure for Spring developers. I couldn&amp;rsquo;t have put this together without input from Microsoft&amp;rsquo;s Asir Vedamuthu Selvasingh, Yitao Dong, Bruno Borges, Brian Benz and Theresa Nguyen. You can find the code for this series &lt;a href="https://github.com/joshlong/bootiful-azure-article"&gt;on Github&lt;/a&gt;. Hit me up on &lt;a href="http://twitter.com/Starbuxman"&gt;Twitter (@starbuxman)&lt;/a&gt; as you&amp;rsquo;re reading the installments with any feedback or questions. You can also learn more about Microsoft Azure in my &lt;a href="http://twitter.com/SpringTipsLive"&gt;Spring Tips (@SpringTipsLive)&lt;/a&gt; installment, &lt;a href="https://spring.io/blog/2018/12/05/spring-tips-bootiful-microsoft-azure"&gt;&lt;em&gt;Bootiful Azure&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Azure Service Bus is a cloud messaging as a service and integration technology. It is, just like CosmosDB, as flexible as possible. It &lt;a href="https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-java-how-to-use-jms-api-amqp"&gt;supports the AMQP 1.0 protocol&lt;/a&gt;, like RabbitMQ. AMQP is a flexible wire protocol. The protocol itself includes instructions for administering the broker, beyond just interacting with it. AMQP brokers are ideal for integration because they are language- and platform-agnostic. In an AMQP broker producers send messages to &lt;em&gt;exchanges&lt;/em&gt; which then route the messages to &lt;em&gt;queues&lt;/em&gt;, from which consumers then read the messages. The exchange is responsible for deciding to which queue the message should be sent. It does this in any of a number of ways but it usually involves looking at a key in the message headers called the &lt;em&gt;routing key&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;This indirection between the exhcange and the queues makes AMQP a bit more flexible than JMS-based brokers where producers send messages directly to &lt;code&gt;Destination&lt;/code&gt; objects that consumers then read from. This means that producers and consumers are coupled by their choice of &lt;code&gt;Destination&lt;/code&gt;. Additionally, JMS is an API for the JVM, it is not a wire protocol. As such, producers and consumers are dependent on the version of the library they&amp;rsquo;re using being correct. That said, &lt;a href="https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-java-how-to-use-jms-api-amqp"&gt;you can also use Azure Service Bus through the JMS API&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Like I said, Azure Service Bus is nothing if not flexible!&lt;/p&gt;
+&lt;p&gt;The AMQP model is illustrative because, basically, the native model for Azure Service Bus looks like AMQP. In Azure Service Bus you have topics or queues to which you send messages. Messages are then connected to subscriptions, from which consumers read. Let&amp;rsquo;s build a simple example that sends and then consumes messages. We won&amp;rsquo;t use AMQP or JMS, just the regular Microsoft Azure ServiceBus API.&lt;/p&gt;&lt;h2&gt;&lt;a href="#configuring-azure-service-bus-on-microsoft-azure" class="anchor" name="configuring-azure-service-bus-on-microsoft-azure"&gt;&lt;/a&gt;Configuring Azure Service Bus on Microsoft Azure&lt;/h2&gt;
+&lt;p&gt;You&amp;rsquo;ll need to provision a servicebus namespace, a topic (top which we send messages and from which multiple consumers may listen) and a subscription (a consumer to either a topic or a queue) to connect to the topic. Here&amp;rsquo;s an example script that does just that.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint shell"&gt;#!/usr/bin/env bash&#xD;
+&#xD;
+destination=messages&#xD;
+topic=${destination}-topic&#xD;
+subscription=${destination}-subscription&#xD;
+namespace=bootiful&#xD;
+rg=$1&#xD;
+&#xD;
+az servicebus namespace create --resource-group $rg \&#xD;
+    --name ${namespace}&#xD;
+&#xD;
+az servicebus topic create --resource-group $rg \&#xD;
+    --namespace-name ${namespace} \&#xD;
+    --name ${topic}&#xD;
+&#xD;
+az servicebus topic subscription create --resource-group $rg  \&#xD;
+    --namespace-name ${namespace} --topic-name ${topic} \&#xD;
+    --name ${subscription}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You&amp;rsquo;ll need a connection string in order to connect your Spring application to the servicebus. Run this command and note the &lt;code&gt;primaryConnectionString&lt;/code&gt; attribute value for later.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint shell"&gt;az servicebus namespace authorization-rule keys list --resource-group bootiful --namespace-name bootiful --name RootManageSharedAccessKey
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#introducing-azure-service-bus-into-your-spring-application" class="anchor" name="introducing-azure-service-bus-into-your-spring-application"&gt;&lt;/a&gt;Introducing Azure Service Bus into your Spring Application&lt;/h2&gt;
+&lt;p&gt;Add the following dependency to your build: &lt;code&gt;com.microsoft.azure&lt;/code&gt; : &lt;code&gt;azure-servicebus-spring-boot-starter&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;ll write two components: one a producer and the other a consumer. In a &lt;em&gt;real&lt;/em&gt; application these things would naturally live in separate applications and separate processes. Messaging serves to support the integration of disparate applications, after all. We&amp;rsquo;ll look at the consumer first. The consumer needs to register a subscriber &lt;em&gt;before&lt;/em&gt; something else has produced the message, so we&amp;rsquo;ll make these beans &lt;em&gt;ordered&lt;/em&gt; - the Spring container will order their initialization one before the other based on the &lt;code&gt;Ordered&lt;/code&gt; value we give it.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;package com.example.bootifulazure;&#xD;
+&#xD;
+import com.microsoft.azure.servicebus.ExceptionPhase;&#xD;
+import com.microsoft.azure.servicebus.IMessage;&#xD;
+import com.microsoft.azure.servicebus.IMessageHandler;&#xD;
+import com.microsoft.azure.servicebus.ISubscriptionClient;&#xD;
+import lombok.extern.log4j.Log4j2;&#xD;
+import org.springframework.boot.context.event.ApplicationReadyEvent;&#xD;
+import org.springframework.context.event.EventListener;&#xD;
+import org.springframework.core.Ordered;&#xD;
+import org.springframework.stereotype.Component;&#xD;
+&#xD;
+import java.util.concurrent.CompletableFuture;&#xD;
+&#xD;
+@Log4j2&#xD;
+@Component&#xD;
+class ServiceBusConsumer implements Ordered {&#xD;
+&#xD;
+    private final ISubscriptionClient iSubscriptionClient;&#xD;
+&#xD;
+    ServiceBusConsumer(ISubscriptionClient isc) {&#xD;
+        this.iSubscriptionClient = isc;&#xD;
+    }&#xD;
+&#xD;
+    @EventListener(ApplicationReadyEvent.class)&#xD;
+    public void consume() throws Exception {&#xD;
+&#xD;
+        this.iSubscriptionClient.registerMessageHandler(new IMessageHandler() {&#xD;
+&#xD;
+            @Override&#xD;
+            public CompletableFuture&amp;lt;Void&amp;gt; onMessageAsync(IMessage message) {&#xD;
+                log.info(&amp;quot;received message &amp;quot; + new String(message.getBody()) + &amp;quot; with body ID &amp;quot; + message.getMessageId());&#xD;
+                return CompletableFuture.completedFuture(null);&#xD;
+            }&#xD;
+&#xD;
+            @Override&#xD;
+            public void notifyException(Throwable exception, ExceptionPhase phase) {&#xD;
+                log.error(&amp;quot;eeks!&amp;quot;, exception);&#xD;
+            }&#xD;
+        });&#xD;
+&#xD;
+    }&#xD;
+&#xD;
+    @Override&#xD;
+    public int getOrder() {&#xD;
+        return Ordered.HIGHEST_PRECEDENCE;&#xD;
+    }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When a message arrives, we log its &lt;code&gt;body&lt;/code&gt; and &lt;code&gt;messageId&lt;/code&gt; .&lt;/p&gt;
+&lt;p&gt;Now, let&amp;rsquo;s look at the producer.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;package com.example.bootifulazure;&#xD;
+&#xD;
+import com.microsoft.azure.servicebus.ITopicClient;&#xD;
+import com.microsoft.azure.servicebus.Message;&#xD;
+import lombok.extern.log4j.Log4j2;&#xD;
+import org.springframework.boot.context.event.ApplicationReadyEvent;&#xD;
+import org.springframework.context.event.EventListener;&#xD;
+import org.springframework.core.Ordered;&#xD;
+import org.springframework.stereotype.Component;&#xD;
+&#xD;
+import java.time.Instant;&#xD;
+&#xD;
+@Log4j2&#xD;
+@Component&#xD;
+class ServiceBusProducer implements Ordered {&#xD;
+&#xD;
+    private final ITopicClient iTopicClient;&#xD;
+&#xD;
+    ServiceBusProducer(ITopicClient iTopicClient) {&#xD;
+        this.iTopicClient = iTopicClient;&#xD;
+    }&#xD;
+&#xD;
+    @EventListener(ApplicationReadyEvent.class)&#xD;
+    public void produce() throws Exception {&#xD;
+        this.iTopicClient.send(new Message(&amp;quot;Hello @ &amp;quot; + Instant.now().toString()));&#xD;
+    }&#xD;
+&#xD;
+    @Override&#xD;
+    public int getOrder() {&#xD;
+        return Ordered.LOWEST_PRECEDENCE;&#xD;
+    }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Pretty straightforward right? The meat of the classes are in the &lt;code&gt;consume()&lt;/code&gt; and &lt;code&gt;produce()&lt;/code&gt; methods. The consumer runs first, then the producer. If you&amp;rsquo;ve ever done any work with messaging technoogies you might find the lack of a mention of any sort of &lt;em&gt;destination&lt;/em&gt; - the topic or queue - a bit puzzling. That configuration all lives in the properties (such as those in your &lt;code&gt;application.properties&lt;/code&gt; file) and are used when auto-configuring the &lt;code&gt;ITopicClient&lt;/code&gt; and &lt;code&gt;ISubscriptionClient&lt;/code&gt;. If you want to send messages or consume messages from multiple destinations, simply define the relevant beans yourself and make sure to &lt;em&gt;not&lt;/em&gt; specify &lt;code&gt;azure.service-bus.connection-string&lt;/code&gt; in your application&amp;rsquo;s properties, otherwise the default Spring Boot auto-configuration will kick in and try to create these beans for you.&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring Boot 2.1.2 released</title>
     <link rel="alternate" href="https://spring.io/blog/2019/01/12/spring-boot-2-1-2-released" />
@@ -929,102 +1056,5 @@ class SqlServerDemo {&#xD;
 &lt;/ul&gt;
 &lt;p&gt;What a year indeed! And next year is &lt;em&gt;already&lt;/em&gt; looking to be bigger and better! That&amp;rsquo;s a wrap for 2019. We&amp;rsquo;ll see you next year, 1 January 2019. &lt;/p&gt;
 &lt;p&gt;Happy New Year from all of us to all of you!&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Session for Apache Geode/Pivotal GemFire 2.1.2.RELEASE</title>
-    <link rel="alternate" href="https://spring.io/blog/2018/12/24/spring-session-for-apache-geode-pivotal-gemfire-2-1-2-release" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>John Blum</name>
-    </author>
-    <id>tag:spring.io,2018-12-24:3510</id>
-    <updated>2018-12-24T07:15:57Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;It is my pleasure to announce &lt;a href="https://spring.io/projects/spring-session"&gt;Spring Session&lt;/a&gt; for &lt;a href="http://geode.apache.org/"&gt;Apache Geode&lt;/a&gt; and &lt;a href="https://pivotal.io/pivotal-gemfire"&gt;Pivotal GemFire&lt;/a&gt; (SSDG), &lt;code&gt;2.1.2.RELEASE&lt;/code&gt; (&lt;a href="https://github.com/spring-projects/spring-session-data-geode"&gt;official project site&lt;/a&gt;).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;In addition to several new features and improvements that follow, SSDG &lt;code&gt;2.1.2.RELEASE&lt;/code&gt; builds on:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Framework 5.1.3.RELEASE.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Data for Apache Geode &amp;amp; Pivotal GemFire Lovelace-SR3.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Spring Session 2.1.2.RELEASE.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;These bits will be picked up in Spring Boot 2.1.2.RELEASE and are &lt;a href="https://search.maven.org/search?q=spring-session-data-geode"&gt;available in Maven Central&lt;/a&gt; now.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You can easily switch from Apache Geode to Pivotal GemFire simply by changing your application dependency from&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;code&gt;org.springframework.session:spring-session-data-geode:2.1.2.RELEASE&lt;/code&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;to&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;code&gt;org.springframework.session:spring-session-data-gemfire:2.1.2.RELEASE&lt;/code&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;or vice versa.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="new-features-include"&gt;&lt;a class="anchor" href="#new-features-include"&gt;&lt;/a&gt;New Features Include:&lt;/h5&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Support of &lt;a href="https://docs.spring.io/autorepo/docs/spring-session-data-geode-build/2.1.2.RELEASE/reference/html5/#httpsession-gemfire-serialization-framework-session-deltas"&gt;customizable dirty Session and application domain object checking&lt;/a&gt; using the &lt;strong&gt;new&lt;/strong&gt; &lt;code&gt;IsDirtyPredicate&lt;/code&gt; interface.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="improvements-include"&gt;&lt;a class="anchor" href="#improvements-include"&gt;&lt;/a&gt;Improvements Include:&lt;/h5&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Allow &lt;code&gt;SessionRepository.save(:Session)&lt;/code&gt; for only non-dirty &lt;code&gt;Sessions&lt;/code&gt; (&lt;a href="https://github.com/spring-projects/spring-session-data-geode/issues/12"&gt;additional details&lt;/a&gt;), minimizing network bandwidth.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://docs.spring.io/autorepo/docs/spring-session-data-geode-build/2.1.2.RELEASE/reference/html5/#httpsession-gemfire-serialization-framework-data-serialization-support"&gt;Server-side configuration support for GemFire/Geode DataSerialization&lt;/a&gt; (Includes &lt;a href="https://docs.spring.io/autorepo/docs/spring-session-data-geode-build/2.1.2.RELEASE/reference/html5/guides/boot-gemfire-with-gfsh-servers.html"&gt;example&lt;/a&gt;).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Use only overridden/implemented &lt;code&gt;SpringSessionGemFireConfigurer&lt;/code&gt; callback methods to affect configuration (&lt;a href="https://github.com/spring-projects/spring-session-data-geode/issues/10"&gt;additional details&lt;/a&gt;).&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Simplified Delta Recording ([additional details]), reducing memory footprint.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-session-data-geode/issues/6"&gt;Optimized Interest Registration&lt;/a&gt; for Session events, thereby reduction network bandwidth.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Support to &lt;a href="https://github.com/spring-projects/spring-session-data-geode/issues/14"&gt;expose Spring Session GemFire/Geode configuration as Properties in the Spring Environment&lt;/a&gt;, allowing settings to be injected and inspected at runtime.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;For a complete list of details about this release, see &lt;a href="https://github.com/spring-projects/spring-session-data-geode/milestone/9?closed=1"&gt;here&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-session-data-geode/milestone/12?closed=1"&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect2"&gt;
-&lt;h3 id="feedback"&gt;&lt;a class="anchor" href="#feedback"&gt;&lt;/a&gt;Feedback&lt;/h3&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Tell us what you think or what we can do better.  Feedback is always appreciated and welcomed.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-session-data-geode/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-session-data-geode/pulls"&gt;PR&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-session"&gt;StackOverflow&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Thank You!&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</content>
   </entry>
 </feed>
