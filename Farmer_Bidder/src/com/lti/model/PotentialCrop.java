@@ -31,13 +31,14 @@ public class PotentialCrop implements Serializable{
 	@Column
 	private int quantity;
 	@Column
+	private long baseAmount;
+	@Column
 	private String phCertificate;
 	@Column
 	private String requestStatus;
-	
-	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="farmerId")
-	private Farmer farmer;
+
+	@Column
+	private int farmerId;
 	
 	public int getCropId() {
 		return cropId;
@@ -75,34 +76,10 @@ public class PotentialCrop implements Serializable{
 	public void setPhCertificate(String phCertificate) {
 		this.phCertificate = phCertificate;
 	}
-	public Farmer getFarmer() {
-		return farmer;
-	}
-	public void setFarmer(Farmer farmer) {
-		this.farmer = farmer;
-	}
 
-	@Override
-	public String toString() {
-		return "PotentialCrop [cropId=" + cropId + ", cropType=" + cropType + ", cropName=" + cropName
-				+ ", fertilizerType=" + fertilizerType + ", quantity=" + quantity + ", phCertificate=" + phCertificate
-				+ ", requestStatus=" + requestStatus + ", farmer=" + farmer + "]";
-	}
+
 
 	
-
-	public PotentialCrop(int cropId, String cropType, String cropName, String fertilizerType, int quantity,
-			String phCertificate, String requestStatus, Farmer farmer) {
-		super();
-		this.cropId = cropId;
-		this.cropType = cropType;
-		this.cropName = cropName;
-		this.fertilizerType = fertilizerType;
-		this.quantity = quantity;
-		this.phCertificate = phCertificate;
-		this.requestStatus = requestStatus;
-		this.farmer = farmer;
-	}
 	public PotentialCrop() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -112,6 +89,38 @@ public class PotentialCrop implements Serializable{
 	}
 	public void setRequestStatus(String requestStatus) {
 		this.requestStatus = requestStatus;
+	}
+	public long getBaseAmount() {
+		return baseAmount;
+	}
+	public void setBaseAmount(long baseAmount) {
+		this.baseAmount = baseAmount;
+	}
+	@Override
+	public String toString() {
+		return "PotentialCrop [cropId=" + cropId + ", cropType=" + cropType + ", cropName=" + cropName
+				+ ", fertilizerType=" + fertilizerType + ", quantity=" + quantity + ", baseAmount=" + baseAmount
+				+ ", phCertificate=" + phCertificate + ", requestStatus=" + requestStatus + ", farmerId=" + farmerId
+				+ "]";
+	}
+	public PotentialCrop(int cropId, String cropType, String cropName, String fertilizerType, int quantity,
+			long baseAmount, String phCertificate, String requestStatus, int farmerId) {
+		super();
+		this.cropId = cropId;
+		this.cropType = cropType;
+		this.cropName = cropName;
+		this.fertilizerType = fertilizerType;
+		this.quantity = quantity;
+		this.baseAmount = baseAmount;
+		this.phCertificate = phCertificate;
+		this.requestStatus = requestStatus;
+		this.farmerId = farmerId;
+	}
+	public int getFarmerId() {
+		return farmerId;
+	}
+	public void setFarmerId(int farmerId) {
+		this.farmerId = farmerId;
 	}
 	
 	

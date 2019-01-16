@@ -6,6 +6,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -34,9 +35,14 @@ private String farmerName;
 @Size(max=10, min=10, message="Phone Number Should be 10 number long" )
 private String phoneNumber;
 
-@OneToOne(cascade=CascadeType.ALL)
-private Login login;
+@Column
+@NotEmpty(message = "UserName cannot be empty!")
+private String email;
 
+@Column
+@Size(min = 8, 
+message = " Password must be atleast 8 Characters Long")
+private String password;
 
 @OneToOne(cascade=CascadeType.ALL)
 private BankDetails bankDetails;
@@ -50,15 +56,6 @@ private LandDetails landDetails;
 @OneToOne(cascade=CascadeType.ALL)
 private DocumentDetails documentDetails;
 
-@OneToMany(cascade=CascadeType.ALL,mappedBy="farmer")
-private Set<PotentialCrop> cropList;
-
-public Login getLogin() {
-	return login;
-}
-public void setLogin(Login login) {
-	this.login = login;
-}
 public int getFarmerId() {
 	return farmerId;
 }
@@ -73,7 +70,6 @@ public void setFarmerName(String farmerName) {
 }
 public Farmer() {
 	super();
-	// TODO Auto-generated constructor stub
 }
 public String getPhoneNumber() {
 	return phoneNumber;
@@ -106,29 +102,37 @@ public void setDocumentDetails(DocumentDetails documentDetails) {
 	this.documentDetails = documentDetails;
 }
 
-@Override
-public String toString() {
-	return "Farmer [farmerId=" + farmerId + ", farmerName=" + farmerName + ", phoneNumber=" + phoneNumber + ", login="
-			+ login + ", bankDetails=" + bankDetails + ", address=" + address + ", landDetails=" + landDetails
-			+ ", documentDetails=" + documentDetails + ", cropList=" + cropList + "]";
-}
-public Farmer(String farmerName, String phoneNumber, Login login, BankDetails bankDetails, Address address,
-		LandDetails landDetails, DocumentDetails documentDetails) {
-	super();
 
+public Farmer(int farmerId, String farmerName, String phoneNumber, String email, String password,
+		BankDetails bankDetails, Address address, LandDetails landDetails, DocumentDetails documentDetails) {
+	super();
+	this.farmerId = farmerId;
 	this.farmerName = farmerName;
 	this.phoneNumber = phoneNumber;
-	this.login = login;
+	this.email = email;
+	this.password = password;
 	this.bankDetails = bankDetails;
 	this.address = address;
 	this.landDetails = landDetails;
 	this.documentDetails = documentDetails;
 }
-public Set<PotentialCrop> getCropList() {
-	return cropList;
+@Override
+public String toString() {
+	return "Farmer [farmerId=" + farmerId + ", farmerName=" + farmerName + ", phoneNumber=" + phoneNumber + ", email="
+			+ email + ", password=" + password + ", bankDetails=" + bankDetails + ", address=" + address
+			+ ", landDetails=" + landDetails + ", documentDetails=" + documentDetails + "]";
 }
-public void setCropList(Set<PotentialCrop> cropList) {
-	this.cropList = cropList;
+public String getEmail() {
+	return email;
+}
+public void setEmail(String email) {
+	this.email = email;
+}
+public String getPassword() {
+	return password;
+}
+public void setPassword(String password) {
+	this.password = password;
 }
 
 

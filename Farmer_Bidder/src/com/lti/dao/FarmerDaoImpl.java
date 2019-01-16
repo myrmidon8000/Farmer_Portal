@@ -4,7 +4,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.Iterator;
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -12,7 +15,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import com.lti.model.Farmer;
-import com.lti.model.Login;
+
 import com.lti.model.PotentialCrop;
 @Repository
 public class FarmerDaoImpl implements IFarmerDao{
@@ -34,16 +37,16 @@ public class FarmerDaoImpl implements IFarmerDao{
 		
 	}
 	@Override
-	public boolean loginFarmers(Login login) {
+	public boolean loginFarmers(Farmer farmer) {
 		Session session = this.sessionFactory.openSession();
 		Transaction tx=session.beginTransaction();
-		String email=login.getEmail();
-		String password=login.getPassword();
-		String query="from Login l where l.email=:email and l.password=:password";
+		String email=farmer.getEmail();
+		String password=farmer.getPassword();
+		String query="from Farmer f where f.email=:email and f.password=:password";
 		Query q=session.createQuery(query);
 		q.setString("email", email);
 		q.setString("password",password);
-		List<Login> farmerList=q.list();
+		List<Farmer> farmerList=q.list();
 		tx.commit();
 		session.close();
 		if(farmerList.size()==0)
@@ -52,24 +55,52 @@ public class FarmerDaoImpl implements IFarmerDao{
 			return true;
 		
 	}
-	@Autowired
-	private Farmer farmer;
 	
-	
-	public void setFarmer(Farmer farmer) {
-		this.farmer = farmer;
-	}
+	public Farmer returnFarmer(Farmer farmer)
+	 {
+		 
+		 Session session = this.sessionFactory.openSession();
+			Transaction tx=session.beginTransaction();
+			String email=farmer.getEmail();
+			String password=farmer.getPassword();
+			String query="from Farmer f where f.email=:email and f.password=:password";
+			Query q=session.createQuery(query);
+			q.setString("email", email);
+			q.setString("password",password);
+			List<Farmer> farmerList=q.list();
+			tx.commit();
+			session.close();
+			Iterator<Farmer> itr= farmerList.iterator();
+			Farmer f=new Farmer();
+					while(itr.hasNext() )
+					{
+						 f= (Farmer) itr.next();
+					}
+					System.out.println(f);
+			return f;
+		}
+
 	@Override
 	public void addCrops(PotentialCrop potentialcrop) {
-		farmer = potentialcrop.getFarmer();
-		System.out.println(farmer);
-		Session session = this.sessionFactory.openSession();
-		Transaction tx=session.beginTransaction();
-		session.save(potentialcrop);
+		Session session1 = this.sessionFactory.openSession();
+		Transaction tx=session1.beginTransaction();
+		session1.save(potentialcrop);
 		logger.info("Crop details saved successfully as: "+potentialcrop);
 		tx.commit();
-		session.close();
+		session1.close();
 	}
-	
+	@Override
+	public List<PotentialCrop> listAllCrops(int id) {
+		Session session = this.sessionFactory.openSession();
+		Transaction tx=session.beginTransaction();
+		String query="from PotentialCrop p where p.farmerId=:farmerId";
+		Query q=session.createQuery(query);
+		q.setInteger("farmerId", id);
+		List<PotentialCrop> cropList=q.list();
+		tx.commit();
+		session.close();
+		return cropList;
+	}
+
 
 }

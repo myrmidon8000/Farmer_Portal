@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.lti.model.Bidder;
-import com.lti.model.Login;
+
 import com.lti.service.IBidderService;
 
 @Controller
@@ -42,18 +42,18 @@ public class BidderController {
 				}
 			@RequestMapping(value = "/bidderlogin")
 			public String LoginPage1(Model model) {
-				model.addAttribute("login",new Login());
+				model.addAttribute("bidder",new Bidder());
 				return "BidderLogin";
 			}					
 		@RequestMapping(value = "/bidderloginprocess", 
 					method = RequestMethod.POST)
 			public String bidderLogin(
-					@ModelAttribute("login") 
-					@Valid Login login, 
+					@ModelAttribute("bidder") 
+					@Valid Bidder bidder, 
 					BindingResult result, 
 					Model model) 
 		{
-				if(this.iBidderService.loginBidder(login))
+				if(this.iBidderService.loginBidder(bidder))
 					return "SuccessBidder";
 				else
 					return "redirect:/bidderlogin";

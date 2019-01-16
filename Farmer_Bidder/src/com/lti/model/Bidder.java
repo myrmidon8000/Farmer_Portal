@@ -33,6 +33,15 @@ public class Bidder implements Serializable{
 	@Size(max=10, min=10, message="Phone Number Should be 10 number long" )
 	private String phoneNumber;
 	
+	@Column
+	@NotEmpty(message = "UserName cannot be empty!")
+	private String email;
+	
+	@Column
+	@Size(min = 8, 
+	message = " Password must be atleast 8 Characters Long")
+	private String password;
+	
 	@OneToOne(cascade=CascadeType.ALL)
 	private BankDetails bankDetails;
 	
@@ -41,10 +50,7 @@ public class Bidder implements Serializable{
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	private DocumentDetails documentDetails;
-	
-	@OneToOne(cascade=CascadeType.ALL)
-	private Login login;
-	
+		
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
@@ -67,32 +73,6 @@ public class Bidder implements Serializable{
 
 	public void setBidderName(String bidderName) {
 		this.bidderName = bidderName;
-	}
-
-	public Login getLogin() {
-		return login;
-	}
-
-	public void setLogin(Login login) {
-		this.login = login;
-	}
-
-	public Bidder(String bidderName, String phoneNumber, BankDetails bankDetails, Address address,
-			DocumentDetails documentDetails, Login login) {
-		super();
-		this.bidderName = bidderName;
-		this.phoneNumber = phoneNumber;
-		this.bankDetails = bankDetails;
-		this.address = address;
-		this.documentDetails = documentDetails;
-		this.login = login;
-	}
-
-	@Override
-	public String toString() {
-		return "Bidder [bidderId=" + bidderId + ", bidderName=" + bidderName + ", phoneNumber=" + phoneNumber
-				+ ", bankDetails=" + bankDetails + ", address=" + address + ", documentDetails=" + documentDetails
-				+ ", login=" + login + "]";
 	}
 
 	public BankDetails getBankDetails() {
@@ -123,6 +103,44 @@ public class Bidder implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+	@Override
+	public String toString() {
+		return "Bidder [bidderId=" + bidderId + ", bidderName=" + bidderName + ", phoneNumber=" + phoneNumber
+				+ ", email=" + email + ", password=" + password + ", bankDetails=" + bankDetails + ", address="
+				+ address + ", documentDetails=" + documentDetails + "]";
+	}
+
+	public Bidder(int bidderId, String bidderName, String phoneNumber, String email, String password,
+			BankDetails bankDetails, Address address, DocumentDetails documentDetails) {
+		super();
+		this.bidderId = bidderId;
+		this.bidderName = bidderName;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+		this.password = password;
+		this.bankDetails = bankDetails;
+		this.address = address;
+		this.documentDetails = documentDetails;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	
 	
 	
 }

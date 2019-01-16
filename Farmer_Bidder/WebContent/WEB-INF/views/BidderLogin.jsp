@@ -17,7 +17,7 @@ prefix="form" %>
 Login for Bidder.
 </h1>
 <form:form action="bidderloginprocess" 
-	modelAttribute="login" method="POST">
+	modelAttribute="bidder" method="POST">
 	
 	<form:label path="email">
 				<spring:message text=" Enter Email"/>

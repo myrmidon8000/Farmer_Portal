@@ -1,12 +1,16 @@
 package com.lti.service;
 
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.lti.dao.IFarmerDao;
 import com.lti.model.Farmer;
-import com.lti.model.Login;
+
 import com.lti.model.PotentialCrop;
 @Service
 @Transactional
@@ -27,8 +31,8 @@ public class FarmerServiceImpl implements IFarmerService{
 
 
 	@Override
-	public boolean loginFarmer(Login login) {
-	return this.iFarmerDao.loginFarmers(login);
+	public boolean loginFarmer(Farmer farmer) {
+	return this.iFarmerDao.loginFarmers(farmer);
 	
 	}
 
@@ -37,6 +41,19 @@ public class FarmerServiceImpl implements IFarmerService{
 	public void addCrop(PotentialCrop potentialcrop) {
 		this.iFarmerDao.addCrops(potentialcrop);
 		
+	}
+
+
+	@Override
+	public Farmer returnFarmer(Farmer farmer) {
+		
+		return this.iFarmerDao.returnFarmer(farmer);
+	}
+
+
+	@Override
+	public List<PotentialCrop> listAllCrops(int id) {
+		return this.iFarmerDao.listAllCrops(id);
 	}
 
 

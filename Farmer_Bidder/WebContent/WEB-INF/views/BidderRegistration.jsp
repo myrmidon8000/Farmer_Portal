@@ -50,17 +50,17 @@ Registration for Bidder.
 <br/>
 <br/>
 	<br/>
-			<form:label path="login.email">
+			<form:label path="email">
 				<spring:message text="Email"/>
 			</form:label>
 	
-		 <form:input path="login.email" />
+		 <form:input path="email" />
 
-		<form:label path="login.password">
+		<form:label path="password">
 				<spring:message text="Password"/>
 			</form:label>
 		
-		 <form:input path="login.password" type="password" /> 
+		 <form:input path="password" type="password" /> 
 		 <br/>
 	<br/>
 			

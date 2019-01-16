@@ -4,7 +4,7 @@ prefix="c" %>
 prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" 
 prefix="form" %>
-<%@ page session="false" %>
+<%@ page session="true" %>
 
 <html>
 <head>
@@ -17,7 +17,7 @@ prefix="form" %>
 Login for farmer.
 </h1>
 <form:form action="farmerloginprocess" 
-	modelAttribute="login" method="POST">
+	modelAttribute="farmer" method="POST">
 	
 	<form:label path="email">
 				<spring:message text=" Enter Email"/>

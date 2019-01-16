@@ -4,7 +4,7 @@ prefix="c" %>
 prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" 
 prefix="form" %>
-<%@ page session="false" %>
+<%@ page session="true" %>
 
 <html>
 <head>
@@ -50,17 +50,17 @@ Registration for farmer.
 <br/>
 <br/>
 	<br/>
-			<form:label path="login.email">
+			<form:label path="email">
 				<spring:message text="Farmer's email"/>
 			</form:label>
 	
-		 <form:input path="login.email" />
+		 <form:input path="email" />
 
-		<form:label path="login.password">
+		<form:label path="password">
 				<spring:message text="Password"/>
 			</form:label>
 		
-		 <form:input path="login.password" type="password" /> 
+		 <form:input path="password" type="password" /> 
 		 <br/>
 	<br/>
 			

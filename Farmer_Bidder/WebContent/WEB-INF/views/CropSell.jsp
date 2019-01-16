@@ -4,7 +4,7 @@ prefix="c" %>
 prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" 
 prefix="form" %>
-<%@ page session="false" %>
+<%@ page session="true"%>
 
 <html>
 <head>
@@ -13,6 +13,8 @@ prefix="form" %>
 
 </head>
 <body>
+<%=session.getAttribute("farmerId") %>
+<%=session.getAttribute("farmername") %>
 <h1>
 Sell Your Crops Here
 </h1>
@@ -25,15 +27,14 @@ Sell Your Crops Here
 		<form:input path="cropId" readonly="true" 
 			size="10"  disabled="true" />
 			<form:hidden path="cropId" />
-			
-	<form:label path="requestStatus">
-				<spring:message text="Crop Status"/>
+			</c:if>
+			<form:label path="farmerId">
+				<spring:message text=" Farmer ID"/>
 			</form:label>
-		<form:input path="requestStatus" value="PENDING" 
-			size="10"  />
-			<form:hidden path="requestStatus" />
-	 </c:if> 
-	 <br>
+	
+		 <form:input path="farmerId" />
+		 <br/>
+	<br/>
 	<form:label path="cropType">
 				<spring:message text=" Crop Type"/>
 			</form:label>
@@ -57,6 +58,12 @@ Sell Your Crops Here
 				<spring:message text="Quantity" />
 			</form:label>
 			<form:input path="quantity" type="number"/>	 
+			 <br/>
+	<br/>
+	 <form:label path="baseAmount" >
+				<spring:message text="Amount" />
+			</form:label>
+			<form:input path="baseAmount" type="number"/>	 
 			 <br/>
 	<br/>
 	
