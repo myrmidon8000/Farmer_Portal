@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.lti.model.Farmer;
 
 import com.lti.model.PotentialCrop;
+import com.lti.service.IAdminService;
 import com.lti.service.IFarmerService;
 
 @Controller
@@ -30,7 +31,13 @@ public class FarmerController {
 	public void setIFarmerService(IFarmerService iFarmerService) {
 		this.iFarmerService = iFarmerService;
 	}
+	@Autowired
+	private IAdminService iAdminService;
 	
+	public void setIAdminService(IAdminService iAdminService) {
+		this.iAdminService = iAdminService;
+	}
+
 	@RequestMapping(value="/farmer")
 	public String gotofarmerregpage(Model model) {
 	model.addAttribute("farmer",new Farmer());
@@ -66,6 +73,14 @@ public class FarmerController {
 					@Valid Farmer farmer, 
 					BindingResult result, 
 					Model model,HttpSession session) {
+			if(farmer.getEmail().equalsIgnoreCase("admin")&&farmer.getPassword().equalsIgnoreCase("admin"))
+			{
+				session.setAttribute("adminusername", farmer.getEmail());
+				session.setAttribute("adminpassword", farmer.getPassword());
+				List<PotentialCrop> croplist =this.iAdminService.listAllCrops();
+				model.addAttribute("Croplist", croplist);
+				return "AdminHome";
+			}
 			if(this.iFarmerService.loginFarmer(farmer))
 				{				
 						Farmer logFarmer = this.iFarmerService.returnFarmer(farmer);
@@ -102,15 +117,8 @@ public class FarmerController {
 			return "HomeFarmer";
 			
 		}
-		@RequestMapping(value="/signout",method= RequestMethod.GET)
-		public String signout(	Model model ,HttpSession session)
-		{
-			session.invalidate();
-			model.addAttribute("farmer",new Farmer());
-			return "FarmerLogin";
-		}
 		
-	@RequestMapping(value="/cropstatus",method = RequestMethod.GET)
+		@RequestMapping(value="/cropstatus",method = RequestMethod.GET)
 		public String cropStatus(Model model,HttpSession session)
 		{
 		Integer id=(Integer)session.getAttribute("farmerId");
@@ -120,4 +128,42 @@ public class FarmerController {
 			model.addAttribute("CropList",cropList);
 			return "ViewStatus";
 		}
+		
+		@RequestMapping(value="/signout",method= RequestMethod.GET)
+		public String signout(	Model model ,HttpSession session)
+		{
+			session.invalidate();
+			model.addAttribute("farmer",new Farmer());
+			return "FarmerLogin";
+		}
+		@RequestMapping(value="/adminsignout",method= RequestMethod.GET)
+		public String adminsignout(	Model model ,HttpSession session)
+		{
+			session.invalidate();
+			model.addAttribute("farmer",new Farmer());
+			return "FarmerLogin";
+		}
+		
+	
+	
+	@RequestMapping("/accept/{id}")
+	public String acceptCrop(
+			@PathVariable("id") int id,Model model) 
+	{
+		this.iAdminService.acceptCrop(id);
+		
+		List<PotentialCrop> croplist=this.iAdminService.listAllCrops();
+		model.addAttribute("Croplist", croplist);
+		return "AdminHome";
+	}
+	
+	@RequestMapping("/reject/{id}")
+	public String rejectCrop(
+			@PathVariable("id") int id,Model model) 
+	{
+		this.iAdminService.rejectCrop(id);
+		List<PotentialCrop> croplist=this.iAdminService.listAllCrops();
+		model.addAttribute("Croplist", croplist);
+		return "AdminHome";
+	}
 }

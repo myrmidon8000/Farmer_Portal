@@ -23,4 +23,25 @@ public void setiAdminDao(IAdminDao iAdminDao) {
 		return this.iAdminDao.listAllCrops();
 	}
 
+
+	@Override
+	public void acceptCrop(int id) {
+ this.iAdminDao.acceptCrop(id);
+		
+	}
+
+
+	@Override
+	public PotentialCrop getcrop(int id) {
+		
+		return this.iAdminDao.getcrop(id);
+	}
+
+
+	@Override
+	public void rejectCrop(int id) {
+		 this.iAdminDao.rejectCrop(id);
+		
+	}
+
 }

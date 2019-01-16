@@ -13,6 +13,6 @@
 <br><br>
 <a href="bidderlogin">Bidder Login</a>
 <br><br>
-<a href="adminlogin">Admin Login</a>
+<a href="farmerlogin">Admin Login</a>
 </body>
 </html>

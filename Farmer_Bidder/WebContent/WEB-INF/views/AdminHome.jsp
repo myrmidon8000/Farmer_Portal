@@ -11,7 +11,7 @@ prefix="form" %>
 <title>Admin Home</title>
 </head>
 <body>
-<c:if test="${!empty CropList}">
+<c:if test="${!empty Croplist}">
 	<table class="tg" border="1">
 	<tr>
 		<th width="50">Crop ID</th>
@@ -24,7 +24,7 @@ prefix="form" %>
 		<th width="50">Ph Certificate</th>
 		<th width="50">Request Status</th>
 	</tr>
-	<c:forEach items="${CropList}" var="crop">
+	<c:forEach items="${Croplist}" var="crop">
 		<tr>
 			<td>${crop.cropId}</td>
 			<td>${crop.farmerId}</td>
@@ -34,10 +34,18 @@ prefix="form" %>
 			<td>${crop.quantity}</td>
 			<td>${crop.baseAmount}</td>
 			<td>${crop.phCertificate}</td>
-			<td>${crop.requestStatus}</td>										
+			<td>${crop.requestStatus}</td>	
+			<td><a href="
+			<c:url value='/accept/${crop.cropId}' />" >Accept</a></td>
+			<td><a href="
+			<c:url value='/reject/${crop.cropId}'/>" >Reject</a>
+			</td>									
 		</tr>
-	</c:forEach>
+		</c:forEach>
 	</table>
 </c:if>
+<br>
+<br>
+<a href="adminsignout">Signout</a>
 </body>
 </html>

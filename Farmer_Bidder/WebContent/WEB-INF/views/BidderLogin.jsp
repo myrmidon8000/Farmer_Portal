@@ -4,7 +4,7 @@ prefix="c" %>
 prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" 
 prefix="form" %>
-<%@ page session="false" %>
+<%@ page session="true" %>
 
 <html>
 <head>

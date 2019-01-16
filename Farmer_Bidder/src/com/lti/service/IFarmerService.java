@@ -17,4 +17,5 @@ public boolean loginFarmer(Farmer farmer);
 public void addCrop(PotentialCrop potentialcrop);
 public Farmer returnFarmer(Farmer farmer);
 public List<PotentialCrop> listAllCrops(int id); 
+
 }
