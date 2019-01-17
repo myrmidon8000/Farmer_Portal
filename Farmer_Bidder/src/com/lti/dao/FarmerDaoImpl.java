@@ -15,7 +15,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import com.lti.model.Farmer;
-
+import com.lti.model.FinalCrop;
 import com.lti.model.PotentialCrop;
 @Repository
 public class FarmerDaoImpl implements IFarmerDao{
@@ -101,6 +101,83 @@ public class FarmerDaoImpl implements IFarmerDao{
 		session.close();
 		return cropList;
 	}
+	@Override
+	public List<FinalCrop> listBids(int id) {
+		Session session = this.sessionFactory.openSession();
+		Transaction tx=session.beginTransaction();
+		String query="from FinalCrop f where f.farmerId=:farmerId";
+		Query q=session.createQuery(query);
+		q.setInteger("farmerId", id);
+		List<FinalCrop> bidList=q.list();
+		tx.commit();
+		session.close();
+		return bidList;
+	}
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+/*	@Override
+	public Boolean forgotpassword(Farmer farmer) {
+		Session session = this.sessionFactory.openSession();
+		Transaction tx=session.beginTransaction();
+		String email=farmer.getEmail();
+		String phrase=farmer.getSecurityQuestion();
+		String query="from Farmer f where f.email=:email and f.securityQuestion=:phrase";
+		Query q=session.createQuery(query);
+		q.setString("email", email);
+		q.setString("phrase", phrase);
+		List<Farmer> farmerList=q.list();
+		tx.commit();
+		session.close();
+		if(farmerList.size()==0)
+		return false;
+		else
+			return true;
+	}
+	@Override
+	public Farmer getpasswordfarmer(Farmer farmer) {
+		Session session = this.sessionFactory.openSession();
+		Transaction tx=session.beginTransaction();
+		String email=farmer.getEmail();
+		String query="from Farmer f where f.email=:email";
+		Query q=session.createQuery(query);
+		q.setString("email", email);
+		List<Farmer> farmerList=q.list();
+		tx.commit();
+		session.close();
+		Iterator<Farmer> itr= farmerList.iterator();
+		Farmer f=new Farmer();
+				while(itr.hasNext() )
+				{
+					 f= (Farmer) itr.next();
+				}
+				System.out.println(f);
+		return f;
+	}
+	@Override
+	public void setNewPassword(Farmer farmer) {
+		Session session = this.sessionFactory.openSession();
+		Transaction tx=session.beginTransaction();
+		
+	}*/
 
 
-}
+

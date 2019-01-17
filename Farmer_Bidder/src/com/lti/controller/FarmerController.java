@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.lti.model.Farmer;
-
+import com.lti.model.FinalCrop;
 import com.lti.model.PotentialCrop;
 import com.lti.service.IAdminService;
 import com.lti.service.IFarmerService;
@@ -122,15 +122,13 @@ public class FarmerController {
 		public String cropStatus(Model model,HttpSession session)
 		{
 		Integer id=(Integer)session.getAttribute("farmerId");
-		System.out.println(id);
 			List<PotentialCrop> cropList=this.iFarmerService.listAllCrops(id);
-			System.out.println(cropList);
 			model.addAttribute("CropList",cropList);
 			return "ViewStatus";
 		}
 		
 		@RequestMapping(value="/signout",method= RequestMethod.GET)
-		public String signout(	Model model ,HttpSession session)
+		public String signout(Model model ,HttpSession session)
 		{
 			session.invalidate();
 			model.addAttribute("farmer",new Farmer());
@@ -138,6 +136,20 @@ public class FarmerController {
 		}
 		@RequestMapping(value="/adminsignout",method= RequestMethod.GET)
 		public String adminsignout(	Model model ,HttpSession session)
+		{
+			session.invalidate();
+			model.addAttribute("farmer",new Farmer());
+			return "FarmerLogin";
+		}
+		@RequestMapping(value="/reject/adminsignout",method= RequestMethod.GET)
+		public String acceptadminsignout(Model model ,HttpSession session)
+		{
+			session.invalidate();
+			model.addAttribute("farmer",new Farmer());
+			return "FarmerLogin";
+		}
+		@RequestMapping(value="/accept/adminsignout",method= RequestMethod.GET)
+		public String rejectadminsignout(Model model ,HttpSession session)
 		{
 			session.invalidate();
 			model.addAttribute("farmer",new Farmer());
@@ -151,7 +163,6 @@ public class FarmerController {
 			@PathVariable("id") int id,Model model) 
 	{
 		this.iAdminService.acceptCrop(id);
-		
 		List<PotentialCrop> croplist=this.iAdminService.listAllCrops();
 		model.addAttribute("Croplist", croplist);
 		return "AdminHome";
@@ -166,4 +177,57 @@ public class FarmerController {
 		model.addAttribute("Croplist", croplist);
 		return "AdminHome";
 	}
-}
+	@RequestMapping(value="/forgotpassword")
+	public String forgotpassword(Model model) {
+		model.addAttribute("farmer",new Farmer());
+		return"FarmerForgotPassword";
+	}
+	@RequestMapping(value="bidstatus")
+	public String viewBids(Model model,HttpSession session)
+	{
+		Integer id=(Integer)session.getAttribute("farmerId");
+	List<FinalCrop> bidList=this.iFarmerService.listBids(id);
+	model.addAttribute("bidList",bidList);
+	return "BidList";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/*@RequestMapping(value="/resetpassword",method = RequestMethod.POST)
+	public String forgotpassword(@ModelAttribute("farmer") 
+	@Valid Farmer farmer, 
+	BindingResult result, 
+	Model model,HttpSession session) {
+		if(this.iFarmerService.forgotpassword(farmer))
+		{
+			Farmer f=this.iFarmerService.getpasswordfarmer(farmer);
+			model.addAttribute("farmer",f);
+			return "FarmerChangePassword";
+		}
+		else
+			return "FarmerForgotPassword";
+	}
+	@RequestMapping(value="/resetpassword",method = RequestMethod.POST)
+	public String setpassword(@ModelAttribute("farmer") 
+	@Valid Farmer farmer, 
+	BindingResult result, 
+	Model model,HttpSession session) {
+		this.iFarmerService.setNewPassword(farmer);
+		model.addAttribute("farmer",new Farmer());
+		return "FarmerLogin";
+	}*/
+	}

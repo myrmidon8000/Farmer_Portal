@@ -9,13 +9,15 @@
 <body>
 <%=session.getAttribute("farmerId") %>
 <%=session.getAttribute("farmername") %>
+
 <br><br>
 <a href="signout">Signout</a>
 
 
 <a href="sellcrop">Sell Your Crop here</a>
-<a href="cropstatus">View Status</a>
+<a href="cropstatus">Sell Crop Status</a>
 <a href="profile">Profile</a>
+<a href="bidstatus">View Your Crop Bids</a>
 <%-- <a href="<c:url value='/cropstatus/${farmer.farmerId}' />" >View Crop Status</a> --%>
 </body>
 </html>

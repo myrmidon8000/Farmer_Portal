@@ -18,9 +18,8 @@ import org.springframework.stereotype.Component;
 @Entity
 public class BankDetails implements Serializable{
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="bank_sequence")
-	@SequenceGenerator(name="bank_sequence",sequenceName="bank_sequence")
-	@Column
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column( unique=true)
 	private int bankId;
 	@Column
 	@NotEmpty(message = "IFSC Code cannot be empty!")

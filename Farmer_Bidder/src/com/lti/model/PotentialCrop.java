@@ -18,9 +18,8 @@ import org.springframework.stereotype.Component;
 @Entity
 public class PotentialCrop implements Serializable{
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="crop_sequence")
-	@SequenceGenerator(name="crop_sequence",sequenceName="crop_sequence")
-	@Column
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column( unique=true)
 	private int cropId;
 	@Column
 	private String cropType;

@@ -22,9 +22,8 @@ import org.springframework.stereotype.Component;
 @Entity
 public class Farmer implements Serializable  {
 @Id
-@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="farmer_sequence")
-@SequenceGenerator(name="farmer_sequence",sequenceName="farmer_sequence")
-@Column
+@GeneratedValue(strategy=GenerationType.AUTO)
+@Column( unique=true)
 private int farmerId;
 @Column
 @NotEmpty(message = "Name cannot be empty!")
@@ -34,6 +33,9 @@ private String farmerName;
 @NotEmpty(message = "Phone Number cannot be empty!")
 @Size(max=10, min=10, message="Phone Number Should be 10 number long" )
 private String phoneNumber;
+
+
+
 
 @Column
 @NotEmpty(message = "UserName cannot be empty!")
@@ -116,12 +118,7 @@ public Farmer(int farmerId, String farmerName, String phoneNumber, String email,
 	this.landDetails = landDetails;
 	this.documentDetails = documentDetails;
 }
-@Override
-public String toString() {
-	return "Farmer [farmerId=" + farmerId + ", farmerName=" + farmerName + ", phoneNumber=" + phoneNumber + ", email="
-			+ email + ", password=" + password + ", bankDetails=" + bankDetails + ", address=" + address
-			+ ", landDetails=" + landDetails + ", documentDetails=" + documentDetails + "]";
-}
+
 public String getEmail() {
 	return email;
 }
@@ -134,6 +131,26 @@ public String getPassword() {
 public void setPassword(String password) {
 	this.password = password;
 }
+public Farmer(String farmerName, String phoneNumber, String email, String password,
+		BankDetails bankDetails, Address address, LandDetails landDetails, DocumentDetails documentDetails) {
+	super();
+
+	this.farmerName = farmerName;
+	this.phoneNumber = phoneNumber;
+	this.email = email;
+	this.password = password;
+	this.bankDetails = bankDetails;
+	this.address = address;
+	this.landDetails = landDetails;
+	this.documentDetails = documentDetails;
+}
+@Override
+public String toString() {
+	return "Farmer [farmerId=" + farmerId + ", farmerName=" + farmerName + ", phoneNumber=" + phoneNumber + ", email="
+			+ email + ", password=" + password + ", bankDetails=" + bankDetails + ", address=" + address
+			+ ", landDetails=" + landDetails + ", documentDetails=" + documentDetails + "]";
+}
+
 
 
 }

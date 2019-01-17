@@ -31,7 +31,6 @@ public class AdminDaoImpl implements IAdminDao{
 			tx.commit();
 			session.close();
 			return cropList;
-		
 		}
 
 	@Override
@@ -42,8 +41,13 @@ public class AdminDaoImpl implements IAdminDao{
 		Query q=session.createQuery(query);
 		q.setInteger("cropId", id);
 		q.executeUpdate();
-		
 		tx.commit();
+		Transaction tx1=session.beginTransaction();
+		String query1="insert into FinalCrop(cropId,cropType,cropName,fertilizerType,quantity,baseAmount,phCertificate,farmerId) "
+				+ "select p.cropId,p.cropType,p.cropName,p.fertilizerType,p.quantity,p.baseAmount,p.phCertificate,p.farmerId from PotentialCrop p where p.requestStatus='ACCEPTED'"; 
+		Query q1=session.createQuery(query1);
+		q1.executeUpdate();
+		tx1.commit();
 		session.close();
 	}
 
@@ -75,8 +79,13 @@ public class AdminDaoImpl implements IAdminDao{
 					q.setInteger("cropId", id);
 					q.executeUpdate();
 					tx.commit();
+					Transaction tx1=session.beginTransaction();
+					String query1="delete from FinalCrop f where f.cropId=:cropId";
+					Query q1=session.createQuery(query1);
+					q1.setInteger("cropId", id);
+					q1.executeUpdate();
+					tx1.commit();
 					session.close();
-					
 				}
 		
 	}

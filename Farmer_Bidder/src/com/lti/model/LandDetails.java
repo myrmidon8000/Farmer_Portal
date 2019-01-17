@@ -16,9 +16,8 @@ import org.springframework.stereotype.Component;
 @Entity
 public class LandDetails implements Serializable{
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="land_sequence")
-	@SequenceGenerator(name="land_sequence",sequenceName="land_sequence")
-	@Column
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column( unique=true)
 	private int landId;
 	@Column 
 	private String landAddress;

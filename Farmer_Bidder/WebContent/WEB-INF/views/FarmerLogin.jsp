@@ -37,6 +37,8 @@ Login for farmer.
 					value= "Submit"/>
 	
 	</form:form>
+	
+	<a href="forgotpassword" >Forgot Password?</a>
 <br>
 	</body>
 </html>

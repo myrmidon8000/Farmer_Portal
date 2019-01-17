@@ -3,10 +3,19 @@ package com.lti.model;
 import java.io.Serializable;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.stereotype.Component;
+@Component
+@Entity
 public class FinalCrop implements Serializable{
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column( unique=true)
+	private int finalCropId;
 	@Column
 	private int cropId;
 	@Column
@@ -21,16 +30,15 @@ public class FinalCrop implements Serializable{
 	private long baseAmount;
 	@Column
 	private String phCertificate;
-	@Column
-	private String requestStatus;
 	@Column 
 	private int farmerId;
-	@Override
-	public String toString() {
-		return "FinalCrop [cropId=" + cropId + ", cropType=" + cropType + ", cropName=" + cropName + ", fertilizerType="
-				+ fertilizerType + ", quantity=" + quantity + ", baseAmount=" + baseAmount + ", phCertificate="
-				+ phCertificate + ", requestStatus=" + requestStatus + ", farmerId=" + farmerId + "]";
-	}
+	@Column
+	private String newBid;
+	@Column
+	private String bidAmount;
+	@Column
+	private String bidderid;
+
 	public int getCropId() {
 		return cropId;
 	}
@@ -73,20 +81,44 @@ public class FinalCrop implements Serializable{
 	public void setPhCertificate(String phCertificate) {
 		this.phCertificate = phCertificate;
 	}
-	public String getRequestStatus() {
-		return requestStatus;
-	}
-	public void setRequestStatus(String requestStatus) {
-		this.requestStatus = requestStatus;
-	}
 	public int getFarmerId() {
 		return farmerId;
 	}
 	public void setFarmerId(int farmerId) {
 		this.farmerId = farmerId;
 	}
+	
+	public FinalCrop() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public String getNewBid() {
+		return newBid;
+	}
+	public void setNewBid(String newBid) {
+		this.newBid = newBid;
+	}
+	public String getBidAmount() {
+		return bidAmount;
+	}
+	public void setBidAmount(String bidAmount) {
+		this.bidAmount = bidAmount;
+	}
+	public String getBidderid() {
+		return bidderid;
+	}
+	public void setBidderid(String bidderid) {
+		this.bidderid = bidderid;
+	}
+	@Override
+	public String toString() {
+		return "FinalCrop [finalCropId=" + finalCropId + ", cropId=" + cropId + ", cropType=" + cropType + ", cropName="
+				+ cropName + ", fertilizerType=" + fertilizerType + ", quantity=" + quantity + ", baseAmount="
+				+ baseAmount + ", phCertificate=" + phCertificate + ", farmerId=" + farmerId + ", newBid=" + newBid
+				+ ", bidAmount=" + bidAmount + ", bidderid=" + bidderid + "]";
+	}
 	public FinalCrop(int cropId, String cropType, String cropName, String fertilizerType, int quantity, long baseAmount,
-			String phCertificate, String requestStatus, int farmerId) {
+			String phCertificate, int farmerId, String newBid, String bidAmount, String bidderid) {
 		super();
 		this.cropId = cropId;
 		this.cropType = cropType;
@@ -95,15 +127,11 @@ public class FinalCrop implements Serializable{
 		this.quantity = quantity;
 		this.baseAmount = baseAmount;
 		this.phCertificate = phCertificate;
-		this.requestStatus = requestStatus;
 		this.farmerId = farmerId;
+		this.newBid = newBid;
+		this.bidAmount = bidAmount;
+		this.bidderid = bidderid;
 	}
-	public FinalCrop() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	
 	
 
 }

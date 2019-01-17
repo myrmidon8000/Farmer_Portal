@@ -20,9 +20,8 @@ import org.springframework.stereotype.Component;
 
 public class Bidder implements Serializable{
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="bidder_sequence")
-	@SequenceGenerator(name="bidder_sequence",sequenceName="bidder_sequence")
-	@Column
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column( unique=true)
 	private int bidderId;
 	@Column
 	@NotEmpty(message = "Name cannot be empty!")
@@ -42,6 +41,25 @@ public class Bidder implements Serializable{
 	message = " Password must be atleast 8 Characters Long")
 	private String password;
 	
+
+	
+
+
+	
+
+	public Bidder(String bidderName, String phoneNumber, String email, String password,
+			BankDetails bankDetails, Address address, DocumentDetails documentDetails) {
+		super();
+
+		this.bidderName = bidderName;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+		this.password = password;
+		this.bankDetails = bankDetails;
+		this.address = address;
+		this.documentDetails = documentDetails;
+	}
+
 	@OneToOne(cascade=CascadeType.ALL)
 	private BankDetails bankDetails;
 	
@@ -104,24 +122,13 @@ public class Bidder implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
+	
+
 	@Override
 	public String toString() {
 		return "Bidder [bidderId=" + bidderId + ", bidderName=" + bidderName + ", phoneNumber=" + phoneNumber
 				+ ", email=" + email + ", password=" + password + ", bankDetails=" + bankDetails + ", address="
 				+ address + ", documentDetails=" + documentDetails + "]";
-	}
-
-	public Bidder(int bidderId, String bidderName, String phoneNumber, String email, String password,
-			BankDetails bankDetails, Address address, DocumentDetails documentDetails) {
-		super();
-		this.bidderId = bidderId;
-		this.bidderName = bidderName;
-		this.phoneNumber = phoneNumber;
-		this.email = email;
-		this.password = password;
-		this.bankDetails = bankDetails;
-		this.address = address;
-		this.documentDetails = documentDetails;
 	}
 
 	public String getEmail() {

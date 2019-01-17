@@ -16,9 +16,8 @@ import org.springframework.stereotype.Component;
 @Entity
 public class DocumentDetails implements Serializable{
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="document_sequence")
-	@SequenceGenerator(name="document_sequence",sequenceName="document_sequence")
-	@Column
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column( unique=true)
 	private int documentId;
 	@Column 
 	@NotEmpty

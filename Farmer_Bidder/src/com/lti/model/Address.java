@@ -18,9 +18,8 @@ import org.springframework.stereotype.Component;
 @Entity
 public class Address implements Serializable {
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="address_sequence")
-	@SequenceGenerator(name="address_sequence",sequenceName="address_sequence")
-	@Column
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column( unique=true)
 private int addressId;
 @Column
 @NotEmpty(message = "Address cannot be empty!")

@@ -16,7 +16,6 @@ public void setiAdminDao(IAdminDao iAdminDao) {
 	this.iAdminDao = iAdminDao;
 }
 
-
 	@Override
 	public List<PotentialCrop> listAllCrops() {
 		
@@ -43,5 +42,4 @@ public void setiAdminDao(IAdminDao iAdminDao) {
 		 this.iAdminDao.rejectCrop(id);
 		
 	}
-
 }
