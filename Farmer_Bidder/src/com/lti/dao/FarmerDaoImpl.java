@@ -7,15 +7,17 @@ import org.springframework.stereotype.Repository;
 import java.util.Iterator;
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
+
 
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.slf4j.Logger;
+
+import com.lti.model.AcceptedBid;
+import com.lti.model.Bidder;
 import com.lti.model.Farmer;
-import com.lti.model.FinalCrop;
 import com.lti.model.PotentialCrop;
 @Repository
 public class FarmerDaoImpl implements IFarmerDao{
@@ -102,16 +104,37 @@ public class FarmerDaoImpl implements IFarmerDao{
 		return cropList;
 	}
 	@Override
-	public List<FinalCrop> listBids(int id) {
+	public List<AcceptedBid> listBids(int id) {
 		Session session = this.sessionFactory.openSession();
 		Transaction tx=session.beginTransaction();
-		String query="from FinalCrop f where f.farmerId=:farmerId";
+		String query="from AcceptedBid a where a.farmerId=:farmerId";
 		Query q=session.createQuery(query);
 		q.setInteger("farmerId", id);
-		List<FinalCrop> bidList=q.list();
+		List<AcceptedBid> bidList=q.list();
 		tx.commit();
 		session.close();
 		return bidList;
+	}
+	@Override
+	public Bidder getbidder(String id) {
+		Session session = this.sessionFactory.openSession();
+		Transaction tx=session.beginTransaction();
+		int id1=Integer.valueOf(id);
+		System.out.println(id1);
+		String query="from Bidder b where b.bidderId=:bidderId";
+		Query q = session.createQuery(query);
+		q.setInteger("bidderId", id1);
+		List<Bidder> finalBidder=q.list();
+		tx.commit();
+		session.close();
+		Iterator<Bidder> itr= finalBidder.iterator();
+		Bidder b=new Bidder();
+				while(itr.hasNext() )
+				{
+					 b= (Bidder) itr.next();
+				}
+				System.out.println(b);
+		return b;
 	}
 	}
 

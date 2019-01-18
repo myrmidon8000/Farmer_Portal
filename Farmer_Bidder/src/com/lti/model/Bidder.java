@@ -42,15 +42,12 @@ public class Bidder implements Serializable{
 	private String password;
 	
 
-	
 
 
-	
-
-	public Bidder(String bidderName, String phoneNumber, String email, String password,
+	public Bidder(int bidderId, String bidderName, String phoneNumber, String email, String password,
 			BankDetails bankDetails, Address address, DocumentDetails documentDetails) {
 		super();
-
+		this.bidderId = bidderId;
 		this.bidderName = bidderName;
 		this.phoneNumber = phoneNumber;
 		this.email = email;

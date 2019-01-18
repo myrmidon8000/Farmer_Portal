@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.lti.dao.IAdminDao;
+import com.lti.model.AcceptedBid;
+import com.lti.model.FinalCrop;
 import com.lti.model.PotentialCrop;
 @Service
 public class AdminServiceImpl implements IAdminService{
@@ -41,5 +43,22 @@ public void setiAdminDao(IAdminDao iAdminDao) {
 	public void rejectCrop(int id) {
 		 this.iAdminDao.rejectCrop(id);
 		
+	}
+
+	@Override
+	public List<AcceptedBid> listAllFinalCrops() {
+
+		return this.iAdminDao.listAllFinalCrops();
+	}
+
+	@Override
+	public void acceptBid(int id) {
+	this.iAdminDao.acceptBid(id);
+		
+	}
+
+	@Override
+	public void insertFinal() {
+this.iAdminDao.insertFinal();		
 	}
 }

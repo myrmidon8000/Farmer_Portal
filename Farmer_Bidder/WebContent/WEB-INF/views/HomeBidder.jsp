@@ -11,6 +11,8 @@ prefix="form" %>
 <title>View Status</title>
 </head>
 <body>
+<h3>${bidderId}</h3>
+
 <h3>Crop List</h3>
 <c:if test="${!empty Finalcrop}">
 	<table class="tg" border="1">

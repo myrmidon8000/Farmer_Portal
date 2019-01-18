@@ -63,6 +63,7 @@ public class BidderController {
 				{
 				Bidder logBidder = this.iBidderService.returnBidder(bidder);
 				session.setAttribute("bidder",logBidder);
+				session.setAttribute("bidderId",logBidder.getBidderId());
 				session.setAttribute("biddername", logBidder.getBidderName());
 				List<FinalCrop> finalCrop =this.iBidderService.listAllCrops();
 				session.setAttribute("Finalcrop", finalCrop);
@@ -104,13 +105,13 @@ public class BidderController {
 		BindingResult result, 
 		Model model,HttpSession session)
 		{
-			System.out.println("Hi");
+		
 			int id=(int)session.getAttribute("cropId");
-			System.out.println(id);
 			this.iBidderService.successBid(placeBid,id);
 			List<FinalCrop> finalCrop =this.iBidderService.listAllCrops();
 			session.setAttribute("Finalcrop", finalCrop);
 			return "HomeBidder";
+			
 		}
 		
 

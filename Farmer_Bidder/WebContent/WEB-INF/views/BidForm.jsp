@@ -13,6 +13,7 @@ prefix="form" %>
 
 </head>
 <body>
+<h3>${bidderId}</h3>
 <h1>
 Place Your Bid
 </h1>

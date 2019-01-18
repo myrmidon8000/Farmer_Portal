@@ -47,5 +47,6 @@ prefix="form" %>
 <br>
 <br>
 <a href="adminsignout">Signout</a>
+<a href="acceptbid">Accept Bids</a>
 </body>
 </html>

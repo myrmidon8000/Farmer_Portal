@@ -14,7 +14,6 @@ public void addBidder(Bidder bidder);
 public boolean loginBidder(Bidder bidder);
 public Bidder returnBidder(Bidder bidder);
 public List<FinalCrop> listAllCrops();
-
 public FinalCrop placeBid(int id);
 public void successBid(FinalCrop placeBid,int id);
 

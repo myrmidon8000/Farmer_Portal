@@ -39,6 +39,8 @@ public class FinalCrop implements Serializable{
 	@Column
 	private String bidderid;
 
+	
+
 	public int getCropId() {
 		return cropId;
 	}
@@ -117,8 +119,8 @@ public class FinalCrop implements Serializable{
 				+ baseAmount + ", phCertificate=" + phCertificate + ", farmerId=" + farmerId + ", newBid=" + newBid
 				+ ", bidAmount=" + bidAmount + ", bidderid=" + bidderid + "]";
 	}
-	public FinalCrop(int cropId, String cropType, String cropName, String fertilizerType, int quantity, long baseAmount,
-			String phCertificate, int farmerId, String newBid, String bidAmount, String bidderid) {
+	public FinalCrop(int cropId, String cropType, String cropName, String fertilizerType, int quantity,
+			long baseAmount, String phCertificate, int farmerId, String newBid, String bidAmount, String bidderid) {
 		super();
 		this.cropId = cropId;
 		this.cropType = cropType;
@@ -132,6 +134,7 @@ public class FinalCrop implements Serializable{
 		this.bidAmount = bidAmount;
 		this.bidderid = bidderid;
 	}
+	
 	
 
 }

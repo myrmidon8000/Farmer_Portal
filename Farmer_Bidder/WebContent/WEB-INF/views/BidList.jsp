@@ -25,6 +25,7 @@ prefix="form" %>
 		<th width="50">Ph Certificate</th>
 		<th width="50">Bidder ID</th>
 		<th width="50">Bid Amount</th>
+		<th width="50">Bid Status</th>
 	</tr>
 	<c:forEach items="${bidList}" var="crop">
 		<tr>
@@ -37,11 +38,18 @@ prefix="form" %>
 			<td>${crop.baseAmount}</td>
 			<td>${crop.phCertificate}</td>
 			<td>${crop.bidderid}</td>			
-			<td>${crop.bidAmount}</td>										
+			<td>${crop.bidAmount}</td>		
+			<td>${crop.bidStatus}</td>										
 		</tr>
 	</c:forEach>
 	</table>
 </c:if>
+<h3>Details of Winning Bidder</h3>
+
+<h3>${winBidder.bidderId}</h3>
+<h3>${winBidder.bidderName}</h3>
+<h3>${winBidder.phoneNumber}</h3>
+<h3>${winBidder.email}</h3>
 
 </body>
 </html>

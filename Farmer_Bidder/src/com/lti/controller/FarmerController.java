@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.lti.model.AcceptedBid;
+import com.lti.model.Bidder;
 import com.lti.model.Farmer;
 import com.lti.model.FinalCrop;
 import com.lti.model.PotentialCrop;
@@ -111,11 +113,18 @@ public class FarmerController {
 					@Valid PotentialCrop potentialcrop, 
 					BindingResult result, 
 					Model model,HttpSession session) {
+			Farmer f=(Farmer)session.getAttribute("farmer");
+			int id = potentialcrop.getFarmerId();
+			if(id==f.getFarmerId())
+			{
 			potentialcrop.setRequestStatus("PENDING");
-		Farmer f=(Farmer)session.getAttribute("farmer");
 			this.iFarmerService.addCrop(potentialcrop);
 			return "HomeFarmer";
-			
+			}
+			else 
+			{
+				return "redirect:/sellcrop";
+			}
 		}
 		
 		@RequestMapping(value="/cropstatus",method = RequestMethod.GET)
@@ -132,42 +141,45 @@ public class FarmerController {
 		{
 			session.invalidate();
 			model.addAttribute("farmer",new Farmer());
-			return "FarmerLogin";
+			return "redirect:/farmerlogin";
 		}
+		
+		//Admin
 		@RequestMapping(value="/adminsignout",method= RequestMethod.GET)
 		public String adminsignout(	Model model ,HttpSession session)
 		{
 			session.invalidate();
 			model.addAttribute("farmer",new Farmer());
-			return "FarmerLogin";
+			return "redirect:/farmerlogin";
 		}
 		@RequestMapping(value="/reject/adminsignout",method= RequestMethod.GET)
 		public String acceptadminsignout(Model model ,HttpSession session)
 		{
 			session.invalidate();
 			model.addAttribute("farmer",new Farmer());
-			return "FarmerLogin";
+			return "redirect:/farmerlogin";
 		}
 		@RequestMapping(value="/accept/adminsignout",method= RequestMethod.GET)
 		public String rejectadminsignout(Model model ,HttpSession session)
 		{
 			session.invalidate();
 			model.addAttribute("farmer",new Farmer());
-			return "FarmerLogin";
+			return "redirect:/farmerlogin";
 		}
 		
-	
-	
+		//Admin
 	@RequestMapping("/accept/{id}")
 	public String acceptCrop(
 			@PathVariable("id") int id,Model model) 
 	{
 		this.iAdminService.acceptCrop(id);
+		this.iAdminService.insertFinal();
 		List<PotentialCrop> croplist=this.iAdminService.listAllCrops();
 		model.addAttribute("Croplist", croplist);
 		return "AdminHome";
 	}
 	
+	//Admin
 	@RequestMapping("/reject/{id}")
 	public String rejectCrop(
 			@PathVariable("id") int id,Model model) 
@@ -177,35 +189,66 @@ public class FarmerController {
 		model.addAttribute("Croplist", croplist);
 		return "AdminHome";
 	}
+	
+	@RequestMapping(value="bidstatus")
+	public String viewBids(Model model,HttpSession session)
+	{
+		int id=(int)session.getAttribute("farmerId");
+	List<AcceptedBid> bidList=this.iFarmerService.listBids(id);
+	if(bidList.get(0).getBidStatus().equals("ACCEPTED"))
+	{
+		System.out.println(bidList);
+		String id1=(String)bidList.get(0).getBidderid();
+		System.out.println(id1);
+		Bidder finalbidder = this.iFarmerService.getbidder(id1);
+		System.out.println(finalbidder);
+		session.setAttribute("winBidder", finalbidder);
+	model.addAttribute("bidList",bidList);
+	return "BidList";
+	}
+	else 
+	{
+		model.addAttribute("bidList",bidList);
+	return "BidList";
+	}
+	}
+	
+	@RequestMapping(value="/acceptbid")
+	public String acceptbid(Model model)
+	{
+		List<AcceptedBid> bidList=this.iAdminService.listAllFinalCrops();
+		model.addAttribute("bidList",bidList);
+		return "AcceptBids";
+		
+	}
+	
+	@RequestMapping("/acceptbid/{id}")
+	public String acceptBid(
+			@PathVariable("id") int id,Model model) 
+	{
+		this.iAdminService.acceptBid(id);
+		return "redirect:/acceptbid";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	@RequestMapping(value="/forgotpassword")
 	public String forgotpassword(Model model) {
 		model.addAttribute("farmer",new Farmer());
 		return"FarmerForgotPassword";
 	}
-	@RequestMapping(value="bidstatus")
-	public String viewBids(Model model,HttpSession session)
-	{
-		Integer id=(Integer)session.getAttribute("farmerId");
-	List<FinalCrop> bidList=this.iFarmerService.listBids(id);
-	model.addAttribute("bidList",bidList);
-	return "BidList";
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	/*@RequestMapping(value="/resetpassword",method = RequestMethod.POST)
 	public String forgotpassword(@ModelAttribute("farmer") 

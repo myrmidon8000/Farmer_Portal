@@ -37,6 +37,7 @@
 				<value>com.lti.model.LandDetails</value>
 				<value>com.lti.model.PotentialCrop</value>
 				<value>com.lti.model.FinalCrop</value>
+				<value>com.lti.model.AcceptedBid</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

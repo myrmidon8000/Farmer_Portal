@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.lti.dao.IFarmerDao;
+import com.lti.model.AcceptedBid;
+import com.lti.model.Bidder;
 import com.lti.model.Farmer;
 import com.lti.model.FinalCrop;
 import com.lti.model.PotentialCrop;
@@ -58,9 +60,15 @@ public class FarmerServiceImpl implements IFarmerService{
 
 
 	@Override
-	public List<FinalCrop> listBids(int id) {
+	public List<AcceptedBid> listBids(int id) {
 	
 		return this.iFarmerDao.listBids(id);
+	}
+
+
+	@Override
+	public Bidder getbidder(String id) {
+		return this.iFarmerDao.getbidder(id);
 	}
 
 
