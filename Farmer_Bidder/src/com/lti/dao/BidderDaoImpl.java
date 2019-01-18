@@ -154,6 +154,18 @@ public class BidderDaoImpl implements IBidderDao {
 		tx3.commit();
 		session.close();
 	}
+	@Override
+	public List<AcceptedBid> listBids(int id) {
+		Session session = this.sessionFactory.openSession();
+		Transaction tx=session.beginTransaction();
+		String query="from AcceptedBid a where a.bidderid=:bidderid";
+		Query q=session.createQuery(query);
+		q.setInteger("bidderid", id);
+		List<AcceptedBid> bidList=q.list();
+		tx.commit();
+		session.close();
+		return bidList;
+	}
 	
 	
 		

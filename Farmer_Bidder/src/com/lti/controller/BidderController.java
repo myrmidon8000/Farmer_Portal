@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.lti.model.AcceptedBid;
 import com.lti.model.Bidder;
 import com.lti.model.FinalCrop;
 import com.lti.model.PotentialCrop;
@@ -112,6 +113,15 @@ public class BidderController {
 			session.setAttribute("Finalcrop", finalCrop);
 			return "HomeBidder";
 			
+		}
+		
+		@RequestMapping("/winningbid")
+		public String viewBids(Model model,HttpSession session)
+		{
+			int bidderId=(int)session.getAttribute("bidderId");
+			List<AcceptedBid> bidList=this.iBidderService.listBids(bidderId);
+			model.addAttribute("bidList",bidList);
+			return"Winbid";
 		}
 		
 

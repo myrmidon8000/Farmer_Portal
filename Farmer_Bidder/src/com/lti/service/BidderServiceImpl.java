@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.lti.dao.IBidderDao;
+import com.lti.model.AcceptedBid;
 import com.lti.model.Bidder;
 import com.lti.model.Farmer;
 import com.lti.model.FinalCrop;
@@ -54,5 +55,11 @@ public class BidderServiceImpl implements IBidderService{
 	public void successBid(FinalCrop placeBid,int id) {
 		this.iBidderDao.successBid(placeBid,id);
 		
+	}
+
+	@Override
+	public List<AcceptedBid> listBids(int id) {
+
+		return this.iBidderDao.listBids(id);
 	}
 }
