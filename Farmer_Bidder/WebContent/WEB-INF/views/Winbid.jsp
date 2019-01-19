@@ -26,6 +26,7 @@ prefix="form" %>
 		<th width="50">Bidder ID</th>
 		<th width="50">Bid Amount</th>
 		<th width="50">Bid Status</th>
+		
 	</tr>
 	<c:forEach items="${bidList}" var="crop">
 		<tr>
@@ -44,5 +45,6 @@ prefix="form" %>
 	</c:forEach>
 	</table>
 </c:if>
+<a href="bidderhome">Home</a>
 </body>
 </html>

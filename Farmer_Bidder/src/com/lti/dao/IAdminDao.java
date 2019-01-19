@@ -17,4 +17,5 @@ public interface IAdminDao {
 	public PotentialCrop getcrop(int id);
 	public void acceptBid(int id);
 	public void insertFinal();
+	public boolean checkAllFinalCrops();
 }

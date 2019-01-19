@@ -18,4 +18,5 @@ public List<FinalCrop> listAllCrops();
 public FinalCrop placeBid(int id);
 public void successBid(FinalCrop placeBid,int id);
 public List<AcceptedBid> listBids(int id);
+public boolean checklistBids(int bidderId);
 }

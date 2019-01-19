@@ -1,9 +1,0 @@
-package com.lti.model;
-@Component	
-@Entity
-public class Farmer {
-
-private int farmerId;
-private String farmerName;
-
-}

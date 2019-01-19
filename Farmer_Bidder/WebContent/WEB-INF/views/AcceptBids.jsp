@@ -46,6 +46,6 @@ prefix="form" %>
 	</c:forEach>
 	</table>
 </c:if>
-
+<a href="adminhome">Home</a>
 </body>
 </html>

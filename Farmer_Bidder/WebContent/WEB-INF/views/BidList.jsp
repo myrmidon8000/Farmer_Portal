@@ -39,17 +39,14 @@ prefix="form" %>
 			<td>${crop.phCertificate}</td>
 			<td>${crop.bidderid}</td>			
 			<td>${crop.bidAmount}</td>		
-			<td>${crop.bidStatus}</td>										
+			<td>${crop.bidStatus}</td>		
+			<td><a href="
+			<c:url value='/viewWinnerDetails/${crop.bidderid}' />" >View winner Details</a></td>
+			<td>									
 		</tr>
 	</c:forEach>
 	</table>
 </c:if>
-<h3>Details of Winning Bidder</h3>
-
-<h3>${winBidder.bidderId}</h3>
-<h3>${winBidder.bidderName}</h3>
-<h3>${winBidder.phoneNumber}</h3>
-<h3>${winBidder.email}</h3>
-
+<a href="farmerhome">Home</a>
 </body>
 </html>

@@ -38,6 +38,6 @@ prefix="form" %>
 		</tr>
 	</table>
 </c:if>
-
+<a href="farmerhome">Home</a>
 </body>
 </html>

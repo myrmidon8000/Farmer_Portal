@@ -62,4 +62,10 @@ public class BidderServiceImpl implements IBidderService{
 
 		return this.iBidderDao.listBids(id);
 	}
+
+	@Override
+	public boolean checklistBids(int bidderId) {
+		
+		return this.iBidderDao.checklistBids(bidderId);
+	}
 }

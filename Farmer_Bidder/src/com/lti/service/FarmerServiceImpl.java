@@ -67,8 +67,22 @@ public class FarmerServiceImpl implements IFarmerService{
 
 
 	@Override
-	public Bidder getbidder(String id) {
+	public Bidder getbidder(int id) {
 		return this.iFarmerDao.getbidder(id);
+	}
+
+
+	@Override
+	public boolean checkAllCrops(int id) {
+
+		return this.iFarmerDao.checkAllCrops(id);
+	}
+
+
+	@Override
+	public boolean checklistBids(int id) {
+
+		return this.iFarmerDao.checklistBids(id);
 	}
 
 

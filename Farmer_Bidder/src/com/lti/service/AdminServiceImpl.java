@@ -61,4 +61,10 @@ public void setiAdminDao(IAdminDao iAdminDao) {
 	public void insertFinal() {
 this.iAdminDao.insertFinal();		
 	}
+
+	@Override
+	public boolean checkAllFinalCrops() {
+		
+		return this.iAdminDao.checkAllFinalCrops();
+	}
 }

@@ -131,6 +131,21 @@ public class AdminDaoImpl implements IAdminDao{
 					tx1.commit();
 					session.close();
 				}
+
+				@Override
+				public boolean checkAllFinalCrops() {
+					Session session = this.sessionFactory.openSession();
+					Transaction tx=session.beginTransaction();
+					String query="from AcceptedBid";
+					Query q=session.createQuery(query);
+					List<AcceptedBid> bidList=q.list();
+					tx.commit();
+					session.close();
+					if(bidList.size()==0)
+						return false;
+						else
+							return true;
+				}
 		
 	}
 	

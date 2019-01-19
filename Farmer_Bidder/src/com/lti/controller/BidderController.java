@@ -74,15 +74,20 @@ public class BidderController {
 					return "redirect:/bidderlogin";
 		}
 		
+		@RequestMapping(value = "/bidderhome")
+		public String bidderHome(HttpSession session)
+		{
+			Bidder bidder=(Bidder)session.getAttribute("bidder");
+			int bidderId=(int)session.getAttribute("bidderId");
+			String biddername=(String)session.getAttribute("biddername");
+			List<FinalCrop> finalCrop =this.iBidderService.listAllCrops();
+			session.setAttribute("Finalcrop", finalCrop);
+			return "HomeBidder";
+		}
+		
+		
 		@RequestMapping(value="/biddersignout",method= RequestMethod.GET)
 		public String signout(Model model ,HttpSession session)
-		{
-			session.invalidate();
-			model.addAttribute("bidder",new Bidder());
-			return "BidderLogin";
-		}
-		@RequestMapping(value="placebid/biddersignout",method= RequestMethod.GET)
-		public String placebidsignout(Model model ,HttpSession session)
 		{
 			session.invalidate();
 			model.addAttribute("bidder",new Bidder());
@@ -111,7 +116,7 @@ public class BidderController {
 			this.iBidderService.successBid(placeBid,id);
 			List<FinalCrop> finalCrop =this.iBidderService.listAllCrops();
 			session.setAttribute("Finalcrop", finalCrop);
-			return "HomeBidder";
+			return "redirect:/bidderhome";
 			
 		}
 		
@@ -119,10 +124,13 @@ public class BidderController {
 		public String viewBids(Model model,HttpSession session)
 		{
 			int bidderId=(int)session.getAttribute("bidderId");
-			List<AcceptedBid> bidList=this.iBidderService.listBids(bidderId);
-			model.addAttribute("bidList",bidList);
-			return"Winbid";
+			if(this.iBidderService.checklistBids(bidderId))
+			{
+				List<AcceptedBid> bidList=this.iBidderService.listBids(bidderId);
+				model.addAttribute("bidList",bidList);
+				return"Winbid";
+			}
+			else
+				return "redirect:/bidderhome";
 		}
-		
-
 }

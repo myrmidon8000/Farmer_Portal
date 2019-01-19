@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.ColumnDefault;
 import org.springframework.stereotype.Component;
 @Component
 @Entity
@@ -33,11 +34,14 @@ public class FinalCrop implements Serializable{
 	@Column 
 	private int farmerId;
 	@Column
-	private String newBid;
+	@ColumnDefault("0")
+	private long newBid;
 	@Column
-	private String bidAmount;
+	@ColumnDefault("0")
+	private long bidAmount;
 	@Column
-	private String bidderid;
+	@ColumnDefault("0")
+	private int bidderid;
 
 	
 
@@ -94,22 +98,23 @@ public class FinalCrop implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public String getNewBid() {
+	
+	public long getNewBid() {
 		return newBid;
 	}
-	public void setNewBid(String newBid) {
+	public void setNewBid(long newBid) {
 		this.newBid = newBid;
 	}
-	public String getBidAmount() {
+	public long getBidAmount() {
 		return bidAmount;
 	}
-	public void setBidAmount(String bidAmount) {
+	public void setBidAmount(long bidAmount) {
 		this.bidAmount = bidAmount;
 	}
-	public String getBidderid() {
+	public int getBidderid() {
 		return bidderid;
 	}
-	public void setBidderid(String bidderid) {
+	public void setBidderid(int bidderid) {
 		this.bidderid = bidderid;
 	}
 	@Override
@@ -119,8 +124,8 @@ public class FinalCrop implements Serializable{
 				+ baseAmount + ", phCertificate=" + phCertificate + ", farmerId=" + farmerId + ", newBid=" + newBid
 				+ ", bidAmount=" + bidAmount + ", bidderid=" + bidderid + "]";
 	}
-	public FinalCrop(int cropId, String cropType, String cropName, String fertilizerType, int quantity,
-			long baseAmount, String phCertificate, int farmerId, String newBid, String bidAmount, String bidderid) {
+	public FinalCrop(int cropId, String cropType, String cropName, String fertilizerType, int quantity, long baseAmount,
+			String phCertificate, int farmerId, long newBid, long bidAmount, int bidderid) {
 		super();
 		this.cropId = cropId;
 		this.cropType = cropType;
@@ -134,6 +139,7 @@ public class FinalCrop implements Serializable{
 		this.bidAmount = bidAmount;
 		this.bidderid = bidderid;
 	}
+
 	
 	
 

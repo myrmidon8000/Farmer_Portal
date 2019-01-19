@@ -120,8 +120,8 @@ public class BidderDaoImpl implements IBidderDao {
 	
 	@Override
 	public void successBid(FinalCrop placeBid,int id) {
-		String amount=placeBid.getNewBid();
-		String bidderId=placeBid.getBidderid();
+		long amount=placeBid.getNewBid();
+		int bidderId=placeBid.getBidderid();
 		Session session = this.sessionFactory.openSession();
 		Transaction tx=session.beginTransaction();
 		/*FinalCrop finalcrop=(FinalCrop) session.get(FinalCrop.class, id);
@@ -130,8 +130,8 @@ public class BidderDaoImpl implements IBidderDao {
 		session.update(finalcrop);*/
 		String query="update FinalCrop f set f.bidAmount=:newBid,f.bidderid=:bidderid where f.cropId=:cropId";
 		Query q=session.createQuery(query);
-		q.setString("newBid", amount);
-		q.setString("bidderid", bidderId);
+		q.setLong("newBid", amount);
+		q.setInteger("bidderid", bidderId);
 		q.setInteger("cropId", id);
 		q.executeUpdate();
 		tx.commit();
@@ -165,6 +165,18 @@ public class BidderDaoImpl implements IBidderDao {
 		tx.commit();
 		session.close();
 		return bidList;
+	}
+	@Override
+	public boolean checklistBids(int bidderId) {
+		Session session = this.sessionFactory.openSession();
+		Transaction tx=session.beginTransaction();
+		String query="from AcceptedBid a where a.bidderid=:bidderid";
+		Query q=session.createQuery(query);
+		q.setInteger("bidderid", bidderId);
+		List<AcceptedBid> bidList=q.list();
+		tx.commit();
+		session.close();
+		return false;
 	}
 	
 	

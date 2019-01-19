@@ -23,7 +23,9 @@ public void addCrops(PotentialCrop potentialcrop);
 public Farmer returnFarmer(Farmer farmer);
 public List<PotentialCrop> listAllCrops(int id); 
 public List<AcceptedBid> listBids(int id);
-public Bidder getbidder(String id);
+public Bidder getbidder(int id);
+public boolean checkAllCrops(int id);
+public boolean checklistBids(int id);
 
 
 

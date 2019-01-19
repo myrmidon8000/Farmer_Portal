@@ -13,4 +13,5 @@ public PotentialCrop getcrop(int id);
 public List<AcceptedBid> listAllFinalCrops();
 public void acceptBid(int id);
 public void insertFinal();
+public boolean checkAllFinalCrops();
 }

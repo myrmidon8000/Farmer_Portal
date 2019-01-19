@@ -116,14 +116,14 @@ public class FarmerDaoImpl implements IFarmerDao{
 		return bidList;
 	}
 	@Override
-	public Bidder getbidder(String id) {
+	public Bidder getbidder(int id) {
 		Session session = this.sessionFactory.openSession();
 		Transaction tx=session.beginTransaction();
-		int id1=Integer.valueOf(id);
-		System.out.println(id1);
+	/*	int id1=Integer.valueOf(id);*/
+		/*System.out.println(id1);*/
 		String query="from Bidder b where b.bidderId=:bidderId";
 		Query q = session.createQuery(query);
-		q.setInteger("bidderId", id1);
+		q.setInteger("bidderId", id);
 		List<Bidder> finalBidder=q.list();
 		tx.commit();
 		session.close();
@@ -135,6 +135,36 @@ public class FarmerDaoImpl implements IFarmerDao{
 				}
 				System.out.println(b);
 		return b;
+	}
+	@Override
+	public boolean checkAllCrops(int id) {
+		Session session = this.sessionFactory.openSession();
+		Transaction tx=session.beginTransaction();
+		String query="from PotentialCrop p where p.farmerId=:farmerId";
+		Query q=session.createQuery(query);
+		q.setInteger("farmerId", id);
+		List<PotentialCrop> cropList=q.list();
+		tx.commit();
+		session.close();
+		if(cropList.size()==0)
+			return false;
+			else
+				return true;
+	}
+	@Override
+	public boolean checklistBids(int id) {
+		Session session = this.sessionFactory.openSession();
+		Transaction tx=session.beginTransaction();
+		String query="from AcceptedBid a where a.farmerId=:farmerId";
+		Query q=session.createQuery(query);
+		q.setInteger("farmerId", id);
+		List<AcceptedBid> bidList=q.list();
+		tx.commit();
+		session.close();
+		if(bidList.size()==0)
+			return false;
+			else
+				return true;
 	}
 	}
 

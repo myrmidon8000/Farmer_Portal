@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.ColumnDefault;
 import org.springframework.stereotype.Component;
 @Component
 @Entity
@@ -33,17 +34,22 @@ public class AcceptedBid implements Serializable{
 	@Column 
 	private int farmerId;
 	@Column
-	private String bidAmount;
+	@ColumnDefault("0")
+	private long bidAmount;
 	@Column
-	private String bidderid;
+	@ColumnDefault("0")
+	private int bidderid;
 	@Column
 	private String bidStatus;
 	
 	
 	
-	public AcceptedBid(int cropId, String cropType, String cropName, String fertilizerType, int quantity,
-			long baseAmount, String phCertificate, int farmerId, String bidAmount, String bidderid, String bidStatus) {
+
+	public AcceptedBid(int acceptedBidId, int cropId, String cropType, String cropName, String fertilizerType,
+			int quantity, long baseAmount, String phCertificate, int farmerId, long bidAmount, int bidderid,
+			String bidStatus) {
 		super();
+		this.acceptedBidId = acceptedBidId;
 		this.cropId = cropId;
 		this.cropType = cropType;
 		this.cropName = cropName;
@@ -56,6 +62,7 @@ public class AcceptedBid implements Serializable{
 		this.bidderid = bidderid;
 		this.bidStatus = bidStatus;
 	}
+	
 	public String getBidStatus() {
 		return bidStatus;
 	}
@@ -116,18 +123,23 @@ public class AcceptedBid implements Serializable{
 	public void setFarmerId(int farmerId) {
 		this.farmerId = farmerId;
 	}
-	public String getBidAmount() {
+
+	public long getBidAmount() {
 		return bidAmount;
 	}
-	public void setBidAmount(String bidAmount) {
+
+	public void setBidAmount(long bidAmount) {
 		this.bidAmount = bidAmount;
 	}
-	public String getBidderid() {
+
+	public int getBidderid() {
 		return bidderid;
 	}
-	public void setBidderid(String bidderid) {
+
+	public void setBidderid(int bidderid) {
 		this.bidderid = bidderid;
 	}
+
 	@Override
 	public String toString() {
 		return "AcceptedBid [acceptedBidId=" + acceptedBidId + ", cropId=" + cropId + ", cropType=" + cropType

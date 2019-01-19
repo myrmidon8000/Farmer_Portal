@@ -95,6 +95,7 @@ public class FarmerController {
 				else
 					return "redirect:/farmerlogin";
 				}
+		
 		@RequestMapping(value="/profile")
 		public String viewProfile(Model model,HttpSession session)
 		{
@@ -119,7 +120,7 @@ public class FarmerController {
 			{
 			potentialcrop.setRequestStatus("PENDING");
 			this.iFarmerService.addCrop(potentialcrop);
-			return "HomeFarmer";
+			return "redirect:/farmerhome";
 			}
 			else 
 			{
@@ -131,10 +132,15 @@ public class FarmerController {
 		public String cropStatus(Model model,HttpSession session)
 		{
 		Integer id=(Integer)session.getAttribute("farmerId");
+		if(this.iFarmerService.checkAllCrops(id))
+		{
 			List<PotentialCrop> cropList=this.iFarmerService.listAllCrops(id);
 			model.addAttribute("CropList",cropList);
 			return "ViewStatus";
 		}
+		else
+			return "redirect:/farmerhome";
+	}
 		
 		@RequestMapping(value="/signout",method= RequestMethod.GET)
 		public String signout(Model model ,HttpSession session)
@@ -144,30 +150,65 @@ public class FarmerController {
 			return "redirect:/farmerlogin";
 		}
 		
-		//Admin
-		@RequestMapping(value="/adminsignout",method= RequestMethod.GET)
-		public String adminsignout(	Model model ,HttpSession session)
-		{
-			session.invalidate();
-			model.addAttribute("farmer",new Farmer());
-			return "redirect:/farmerlogin";
-		}
-		@RequestMapping(value="/reject/adminsignout",method= RequestMethod.GET)
-		public String acceptadminsignout(Model model ,HttpSession session)
-		{
-			session.invalidate();
-			model.addAttribute("farmer",new Farmer());
-			return "redirect:/farmerlogin";
-		}
-		@RequestMapping(value="/accept/adminsignout",method= RequestMethod.GET)
-		public String rejectadminsignout(Model model ,HttpSession session)
-		{
-			session.invalidate();
-			model.addAttribute("farmer",new Farmer());
-			return "redirect:/farmerlogin";
-		}
 		
-		//Admin
+	@RequestMapping(value="bidstatus")
+	public String viewBids(Model model,HttpSession session)
+	{
+		int id=(int)session.getAttribute("farmerId");
+		if(this.iFarmerService.checklistBids(id))
+		{
+			List<AcceptedBid> bidList=this.iFarmerService.listBids(id);
+			if(bidList.get(0).getBidStatus().equals("ACCEPTED"))
+			{
+				int id1=(int)bidList.get(0).getBidderid();
+				Bidder finalbidder = this.iFarmerService.getbidder(id1);
+				session.setAttribute("winBidder", finalbidder);
+				model.addAttribute("bidList",bidList);
+				return "BidList";
+			}
+			else 
+			{
+				model.addAttribute("bidList",bidList);
+				return "BidList";
+			}
+		}
+			else
+				return "redirect:/farmerhome";
+	}
+
+	@RequestMapping(value="/viewWinnerDetails/{id}")
+	public String viewWinnerDetails(@PathVariable("id") int id,Model model,HttpSession session)
+	{
+			int id1=(int)session.getAttribute("farmerId");
+			List<AcceptedBid> bidList=this.iFarmerService.listBids(id1);
+		
+				if(bidList.get(0).getBidStatus().equals("ACCEPTED"))
+				{
+					Bidder finalbidder = this.iFarmerService.getbidder(id);
+					model.addAttribute("winBidder", finalbidder);
+					return "WinnerDetails";
+			}
+				else {
+					model.addAttribute("bidList",bidList);
+					return "BidList";	
+				}
+	}
+	
+	
+	@RequestMapping("/farmerhome")
+	public String farmerhome(Model model, HttpSession session)
+	{
+
+		Farmer farmer=(Farmer)session.getAttribute("farmer");
+		int farmerId=(int)session.getAttribute("farmerId");
+		String farmername=(String)session.getAttribute("farmername");
+		session.setAttribute("farmer",farmer);
+		session.setAttribute("farmerId", farmerId);
+		session.setAttribute("farmername",farmername);
+		return "HomeFarmer";
+	}
+	
+	//ADMIN
 	@RequestMapping("/accept/{id}")
 	public String acceptCrop(
 			@PathVariable("id") int id,Model model) 
@@ -176,52 +217,36 @@ public class FarmerController {
 		this.iAdminService.insertFinal();
 		List<PotentialCrop> croplist=this.iAdminService.listAllCrops();
 		model.addAttribute("Croplist", croplist);
-		return "AdminHome";
+		return "redirect:/adminhome";
 	}
 	
-	//Admin
-	@RequestMapping("/reject/{id}")
-	public String rejectCrop(
-			@PathVariable("id") int id,Model model) 
-	{
-		this.iAdminService.rejectCrop(id);
-		List<PotentialCrop> croplist=this.iAdminService.listAllCrops();
-		model.addAttribute("Croplist", croplist);
-		return "AdminHome";
-	}
 	
-	@RequestMapping(value="bidstatus")
-	public String viewBids(Model model,HttpSession session)
-	{
-		int id=(int)session.getAttribute("farmerId");
-	List<AcceptedBid> bidList=this.iFarmerService.listBids(id);
-	if(bidList.get(0).getBidStatus().equals("ACCEPTED"))
-	{
-		System.out.println(bidList);
-		String id1=(String)bidList.get(0).getBidderid();
-		System.out.println(id1);
-		Bidder finalbidder = this.iFarmerService.getbidder(id1);
-		System.out.println(finalbidder);
-		session.setAttribute("winBidder", finalbidder);
-	model.addAttribute("bidList",bidList);
-	return "BidList";
-	}
-	else 
-	{
-		model.addAttribute("bidList",bidList);
-	return "BidList";
-	}
-	}
+	//ADMIN
+		@RequestMapping("/reject/{id}")
+		public String rejectCrop(
+				@PathVariable("id") int id,Model model) 
+		{
+			this.iAdminService.rejectCrop(id);
+			List<PotentialCrop> croplist=this.iAdminService.listAllCrops();
+			model.addAttribute("Croplist", croplist);
+			return "redirect:/adminhome";
+		}
 	
+	//ADMIN
 	@RequestMapping(value="/acceptbid")
 	public String acceptbid(Model model)
 	{
+		if(this.iAdminService.checkAllFinalCrops())
+		{
 		List<AcceptedBid> bidList=this.iAdminService.listAllFinalCrops();
 		model.addAttribute("bidList",bidList);
 		return "AcceptBids";
-		
+		}
+		else 
+		return "redirect:/adminhome";
 	}
 	
+	//ADMIN
 	@RequestMapping("/acceptbid/{id}")
 	public String acceptBid(
 			@PathVariable("id") int id,Model model) 
@@ -230,9 +255,34 @@ public class FarmerController {
 		return "redirect:/acceptbid";
 	}
 	
+	//ADMIN
+	@RequestMapping("/adminhome")
+	public String adminHome(Model model,HttpSession session)
+	{
+		String username=(String)session.getAttribute("username");
+		String password=(String)session.getAttribute("password");
+		session.setAttribute("username", username);
+		session.setAttribute("password", password);
+		List<PotentialCrop> croplist =this.iAdminService.listAllCrops();
+		model.addAttribute("Croplist", croplist);
+		return "AdminHome";
+	}
 	
+	//ADMIN
+	@RequestMapping("/home")
+	public String gotohome()
+	{
+		return "redirect:/adminhome";
+	}
 	
-	
+	//ADMIN
+			@RequestMapping(value="/adminsignout",method= RequestMethod.GET)
+			public String adminsignout(	Model model ,HttpSession session)
+			{
+				session.invalidate();
+				model.addAttribute("farmer",new Farmer());
+				return "redirect:/farmerlogin";
+			}
 	
 	
 	
