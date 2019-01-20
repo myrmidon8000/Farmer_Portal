@@ -85,20 +85,18 @@ public class FarmerServiceImpl implements IFarmerService{
 		return this.iFarmerDao.checklistBids(id);
 	}
 
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
+}
 	/*@Override
-	public Boolean forgotpassword(Farmer farmer) {
-		
+	public boolean forgotpassword(Farmer farmer) {
+	
 		return this.iFarmerDao.forgotpassword(farmer);
+	}
+
+
+	@Override
+	public void setNewPassword(Farmer farmer) {
+		this.iFarmerDao.setNewPassword(farmer);
+		
 	}
 
 
@@ -107,12 +105,11 @@ public class FarmerServiceImpl implements IFarmerService{
 
 		return this.iFarmerDao.getpasswordfarmer(farmer);
 	}
+*/
 
-
-	@Override
-	public void setNewPassword(Farmer farmer) {
-this.iFarmerDao.setNewPassword(farmer);*/
-		
-	}
-
+	
+	
+	
+	
+	
 

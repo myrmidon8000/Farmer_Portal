@@ -25,6 +25,7 @@ public class Farmer implements Serializable  {
 @GeneratedValue(strategy=GenerationType.AUTO)
 @Column( unique=true)
 private int farmerId;
+
 @Column
 @NotEmpty(message = "Name cannot be empty!")
 private String farmerName;
@@ -34,9 +35,6 @@ private String farmerName;
 @Size(max=10, min=10, message="Phone Number Should be 10 number long" )
 private String phoneNumber;
 
-
-
-
 @Column
 @NotEmpty(message = "UserName cannot be empty!")
 private String email;
@@ -45,6 +43,10 @@ private String email;
 @Size(min = 8, 
 message = " Password must be atleast 8 Characters Long")
 private String password;
+
+@Column
+private String securityQuestion;
+
 
 @OneToOne(cascade=CascadeType.ALL)
 private BankDetails bankDetails;
@@ -57,6 +59,7 @@ private LandDetails landDetails;
 
 @OneToOne(cascade=CascadeType.ALL)
 private DocumentDetails documentDetails;
+
 
 public int getFarmerId() {
 	return farmerId;
@@ -131,10 +134,27 @@ public String getPassword() {
 public void setPassword(String password) {
 	this.password = password;
 }
-public Farmer(String farmerName, String phoneNumber, String email, String password,
-		BankDetails bankDetails, Address address, LandDetails landDetails, DocumentDetails documentDetails) {
-	super();
 
+public String getSecurityQuestion() {
+	return securityQuestion;
+}
+
+public void setSecurityQuestion(String securityQuestion) {
+	this.securityQuestion = securityQuestion;
+}
+
+@Override
+public String toString() {
+	return "Farmer [farmerId=" + farmerId + ", farmerName=" + farmerName + ", phoneNumber=" + phoneNumber + ", email="
+			+ email + ", password=" + password + ", bankDetails=" + bankDetails + ", address=" + address
+			+ ", landDetails=" + landDetails + ", documentDetails=" + documentDetails + ", securityQuestion="
+			+ securityQuestion + "]";
+}
+
+
+public Farmer(String farmerName, String phoneNumber, String email, String password, BankDetails bankDetails,
+		Address address, LandDetails landDetails, DocumentDetails documentDetails, String securityQuestion) {
+	super();
 	this.farmerName = farmerName;
 	this.phoneNumber = phoneNumber;
 	this.email = email;
@@ -143,13 +163,10 @@ public Farmer(String farmerName, String phoneNumber, String email, String passwo
 	this.address = address;
 	this.landDetails = landDetails;
 	this.documentDetails = documentDetails;
+	this.securityQuestion = securityQuestion;
 }
-@Override
-public String toString() {
-	return "Farmer [farmerId=" + farmerId + ", farmerName=" + farmerName + ", phoneNumber=" + phoneNumber + ", email="
-			+ email + ", password=" + password + ", bankDetails=" + bankDetails + ", address=" + address
-			+ ", landDetails=" + landDetails + ", documentDetails=" + documentDetails + "]";
-}
+
+
 
 
 

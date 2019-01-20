@@ -16,6 +16,6 @@ public interface IAdminDao {
 	public List<AcceptedBid> listAllFinalCrops();
 	public PotentialCrop getcrop(int id);
 	public void acceptBid(int id);
-	public void insertFinal();
+	public void insertFinal(int id);
 	public boolean checkAllFinalCrops();
 }

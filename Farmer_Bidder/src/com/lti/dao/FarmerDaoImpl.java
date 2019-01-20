@@ -55,7 +55,6 @@ public class FarmerDaoImpl implements IFarmerDao{
 		return false;
 		else
 			return true;
-		
 	}
 	
 	public Farmer returnFarmer(Farmer farmer)
@@ -78,7 +77,6 @@ public class FarmerDaoImpl implements IFarmerDao{
 					{
 						 f= (Farmer) itr.next();
 					}
-					System.out.println(f);
 			return f;
 		}
 
@@ -87,7 +85,6 @@ public class FarmerDaoImpl implements IFarmerDao{
 		Session session1 = this.sessionFactory.openSession();
 		Transaction tx=session1.beginTransaction();
 		session1.save(potentialcrop);
-		logger.info("Crop details saved successfully as: "+potentialcrop);
 		tx.commit();
 		session1.close();
 	}
@@ -119,8 +116,6 @@ public class FarmerDaoImpl implements IFarmerDao{
 	public Bidder getbidder(int id) {
 		Session session = this.sessionFactory.openSession();
 		Transaction tx=session.beginTransaction();
-	/*	int id1=Integer.valueOf(id);*/
-		/*System.out.println(id1);*/
 		String query="from Bidder b where b.bidderId=:bidderId";
 		Query q = session.createQuery(query);
 		q.setInteger("bidderId", id);
@@ -133,7 +128,7 @@ public class FarmerDaoImpl implements IFarmerDao{
 				{
 					 b= (Bidder) itr.next();
 				}
-				System.out.println(b);
+
 		return b;
 	}
 	@Override
@@ -166,26 +161,8 @@ public class FarmerDaoImpl implements IFarmerDao{
 			else
 				return true;
 	}
-	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 /*	@Override
 	public Boolean forgotpassword(Farmer farmer) {
@@ -222,15 +199,20 @@ public class FarmerDaoImpl implements IFarmerDao{
 				{
 					 f= (Farmer) itr.next();
 				}
-				System.out.println(f);
 		return f;
 	}
 	@Override
 	public void setNewPassword(Farmer farmer) {
 		Session session = this.sessionFactory.openSession();
 		Transaction tx=session.beginTransaction();
-		
+		String password=farmer.getPassword();
+	String query="update Farmer f set f.password=:password";
+	Query q = session.createQuery(query);
+	q.setString("password", password);
+	tx.commit();
+	session.close();
 	}*/
+	}
 
 
 

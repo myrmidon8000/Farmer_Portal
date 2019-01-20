@@ -58,8 +58,8 @@ public void setiAdminDao(IAdminDao iAdminDao) {
 	}
 
 	@Override
-	public void insertFinal() {
-this.iAdminDao.insertFinal();		
+	public void insertFinal(int id) {
+this.iAdminDao.insertFinal(id);		
 	}
 
 	@Override

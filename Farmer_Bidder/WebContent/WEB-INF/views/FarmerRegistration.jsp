@@ -152,12 +152,13 @@ Registration for farmer.
 		 <form:input path="documentDetails.certificateNumber"  />
 		 	 	 				 	 	 	  <br/>
 	<br/>
-			<%-- <form:label path="securityQuestion;">
+	<%-- 		
+		 	<form:label path="securityQuestion;">
 				<spring:message text="Enter a Security Phrase"/>
 			</form:label>
-	
-		 <form:input path="securityQuestion;"  /> --%>
-		 
+	<form:input path="securityQuestion;" /> 
+		 <br>
+<br>	 --%>
 		 
 		 <input type="submit" class="button"
 					value= "LogIn"/>

@@ -214,7 +214,7 @@ public class FarmerController {
 			@PathVariable("id") int id,Model model) 
 	{
 		this.iAdminService.acceptCrop(id);
-		this.iAdminService.insertFinal();
+		this.iAdminService.insertFinal(id);
 		List<PotentialCrop> croplist=this.iAdminService.listAllCrops();
 		model.addAttribute("Croplist", croplist);
 		return "redirect:/adminhome";
@@ -283,6 +283,15 @@ public class FarmerController {
 				model.addAttribute("farmer",new Farmer());
 				return "redirect:/farmerlogin";
 			}
+
+
+@RequestMapping(value = "/login")
+public String userType(Model model)
+{
+	return "typeofuser";
+}
+	
+}
 	
 	
 	
@@ -290,17 +299,13 @@ public class FarmerController {
 	
 	
 	
-	
-	
-	
-	
-	@RequestMapping(value="/forgotpassword")
+	/*@RequestMapping(value="/forgotpassword")
 	public String forgotpassword(Model model) {
 		model.addAttribute("farmer",new Farmer());
 		return"FarmerForgotPassword";
 	}
 	
-	/*@RequestMapping(value="/resetpassword",method = RequestMethod.POST)
+	@RequestMapping(value="/resetpassword",method = RequestMethod.POST)
 	public String forgotpassword(@ModelAttribute("farmer") 
 	@Valid Farmer farmer, 
 	BindingResult result, 
@@ -314,7 +319,7 @@ public class FarmerController {
 		else
 			return "FarmerForgotPassword";
 	}
-	@RequestMapping(value="/resetpassword",method = RequestMethod.POST)
+	@RequestMapping(value="/setpassword",method = RequestMethod.POST)
 	public String setpassword(@ModelAttribute("farmer") 
 	@Valid Farmer farmer, 
 	BindingResult result, 
@@ -323,4 +328,3 @@ public class FarmerController {
 		model.addAttribute("farmer",new Farmer());
 		return "FarmerLogin";
 	}*/
-	}

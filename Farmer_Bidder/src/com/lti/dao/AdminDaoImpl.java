@@ -49,12 +49,13 @@ public class AdminDaoImpl implements IAdminDao{
 		tx.commit();
 		session.close();
 	}
-	public void insertFinal() {
+	public void insertFinal(int id) {
 		Session session = this.sessionFactory.openSession();
 		Transaction tx=session.beginTransaction();
 		String query="insert into FinalCrop(cropId,cropType,cropName,fertilizerType,quantity,baseAmount,phCertificate,farmerId) "
-				+ "select p.cropId,p.cropType,p.cropName,p.fertilizerType,p.quantity,p.baseAmount,p.phCertificate,p.farmerId from PotentialCrop p where p.requestStatus='ACCEPTED'"; 
+				+ "select p.cropId,p.cropType,p.cropName,p.fertilizerType,p.quantity,p.baseAmount,p.phCertificate,p.farmerId from PotentialCrop p where p.requestStatus='ACCEPTED' and p.cropId=:cropId"; 
 		Query q=session.createQuery(query);
+		q.setInteger("cropId",id);
 		q.executeUpdate();
 		tx.commit();
 		session.close();

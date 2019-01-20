@@ -14,6 +14,6 @@
 <h3>${winBidder.phoneNumber}</h3>
 <h3>${winBidder.email}</h3>
 
-<a href="bidderhome">Home</a>
+<a href="farmerhome">Home</a>
 </body>
 </html>

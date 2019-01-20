@@ -26,14 +26,12 @@ public class BidderDaoImpl implements IBidderDao {
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
-	private static final Logger logger = 			
-			LoggerFactory.getLogger(BidderDaoImpl.class);
+
 	@Override
 	public void addBidders(Bidder bidder) {
 		Session session = this.sessionFactory.openSession();
 		Transaction tx=session.beginTransaction();
 		session.save(bidder);
-		logger.info("Bidder details saved successfully as: "+bidder);
 		tx.commit();
 		session.close();
 		
@@ -176,7 +174,10 @@ public class BidderDaoImpl implements IBidderDao {
 		List<AcceptedBid> bidList=q.list();
 		tx.commit();
 		session.close();
-		return false;
+		if(bidList.size()==0)
+			return false;
+			else
+				return true;
 	}
 	
 	

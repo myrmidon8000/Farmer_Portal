@@ -25,6 +25,11 @@ public boolean checkAllCrops(int id);
 public boolean checklistBids(int id);
 
 
+/*public boolean forgotpassword(Farmer farmer);
+public void setNewPassword(Farmer farmer);
+public Farmer getpasswordfarmer(Farmer farmer);*/
+
+
 
 
 
